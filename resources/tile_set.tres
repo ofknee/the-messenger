@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://b3kqdss6qyo55" path="res://assets/environment/Kings and Pigs/Sprites/14-TileSets/Terrain (32x32).png" id="1_wvt7e"]
 [ext_resource type="Texture2D" uid="uid://cqtig7k460a5h" path="res://assets/environment/Kings and Pigs/Sprites/14-TileSets/Decorations (32x32).png" id="2_k764t"]
-[ext_resource type="PackedScene" uid="uid://c7b1a4yvawdhm" path="res://scenes/window.tscn" id="3_0naqh"]
+[ext_resource type="PackedScene" uid="uid://cn6jvt04v4gms" path="res://scenes/coin.tscn" id="3_0naqh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_okeva"]
 resource_name = "BigBlocks"
@@ -276,8 +276,9 @@ texture_region_size = Vector2i(32, 32)
 5:4/0 = 0
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_xd6c0"]
-resource_name = "i-went-off-task"
+resource_name = "yo idk what to name this"
 scenes/1/scene = ExtResource("3_0naqh")
+scenes/2/scene = ExtResource("3_0naqh")
 
 [resource]
 tile_size = Vector2i(32, 32)
@@ -289,4 +290,4 @@ terrain_set_0/terrain_1/name = "BG"
 terrain_set_0/terrain_1/color = Color(0.77752095, 1.540184e-05, 0.5425594, 1)
 sources/0 = SubResource("TileSetAtlasSource_okeva")
 sources/3 = SubResource("TileSetAtlasSource_0naqh")
-sources/4 = SubResource("TileSetScenesCollectionSource_xd6c0")
+sources/5 = SubResource("TileSetScenesCollectionSource_xd6c0")
