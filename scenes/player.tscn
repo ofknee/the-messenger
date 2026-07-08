@@ -108,6 +108,10 @@ region = Rect2(152, 0, 38, 28)
 atlas = ExtResource("2_qhqgy")
 region = Rect2(190, 0, 38, 28)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_dt7fs"]
+atlas = ExtResource("1_g2els")
+region = Rect2(76, 0, 38, 28)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_8o121"]
 animations = [{
 "frames": [{
@@ -214,6 +218,14 @@ animations = [{
 "loop": 1,
 "name": &"run",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dt7fs")
+}],
+"loop": 1,
+"name": &"still",
+"speed": 5.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_43hlm"]
@@ -225,8 +237,7 @@ script = ExtResource("1_fjrip")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1602055964]
 sprite_frames = SubResource("SpriteFrames_8o121")
-animation = &"land"
-frame_progress = 0.9127484
+animation = &"still"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=537230496]
 position = Vector2(1, 4)
