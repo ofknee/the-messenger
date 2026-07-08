@@ -8,6 +8,7 @@ const JUMP_VELOCITY = -350.0
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
+			
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 		animated_sprite.play("fall")
@@ -16,9 +17,6 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 		animated_sprite.play("jump")
-		
-	if Input.is_action_just_pressed("die"):
-		animated_sprite.play("die")
 		
 	# Get the input direction and handle the movement/deceleration.
 	var direction := Input.get_axis("walk_l", "walk_r")
