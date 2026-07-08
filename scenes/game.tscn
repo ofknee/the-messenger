@@ -2,6 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://bao4fujosvh2v" path="res://scenes/player.tscn" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://c8iyeaju6mpb0" path="res://scenes/tile_map_layer.tscn" id="1_yqjtg"]
+[ext_resource type="Script" uid="uid://bugwb66xumgn8" path="res://scenes/ui.gd" id="3_lbhrr"]
+[ext_resource type="Texture2D" uid="uid://dvt6p0w7dnb63" path="res://assets/ui/coin.png" id="3_lnu2h"]
 
 [node name="Game" type="Node2D" unique_id=630479902]
 
@@ -19,3 +21,39 @@ drag_horizontal_enabled = true
 drag_vertical_offset = -1.0
 drag_left_margin = 1.0
 drag_right_margin = 1.0
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1540499957]
+script = ExtResource("3_lbhrr")
+
+[node name="Control" type="Control" parent="UI" unique_id=411163068]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/Control" unique_id=366588021]
+layout_mode = 1
+offset_transform_enabled = true
+
+[node name="Panel" type="Panel" parent="UI/Control/MarginContainer" unique_id=97814743]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/Control/MarginContainer/Panel" unique_id=1134672212]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/Control/MarginContainer/Panel/MarginContainer" unique_id=436397762]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="UI/Control/MarginContainer/Panel/MarginContainer/HBoxContainer" unique_id=1650289716]
+layout_mode = 2
+text = "im sooo rich"
+
+[node name="TextureRect" type="TextureRect" parent="UI/Control/MarginContainer/Panel/MarginContainer/HBoxContainer" unique_id=612954176]
+layout_mode = 2
+texture = ExtResource("3_lnu2h")
