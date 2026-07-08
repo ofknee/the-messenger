@@ -220,6 +220,20 @@ animations = [{
 radius = 8.0
 height = 20.0
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_fjrip"]
+blend_mode = 2
+
+[sub_resource type="Gradient" id="Gradient_yqjtg"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_smehm"]
+gradient = SubResource("Gradient_yqjtg")
+width = 85
+height = 85
+fill = 1
+fill_from = Vector2(0.50869566, 0.4978261)
+fill_to = Vector2(0.12173913, 0.76304346)
+
 [node name="Player" type="CharacterBody2D" unique_id=1850920723]
 script = ExtResource("1_fjrip")
 
@@ -230,3 +244,13 @@ animation = &"idle"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=537230496]
 position = Vector2(1, 4)
 shape = SubResource("CapsuleShape2D_43hlm")
+
+[node name="flashlight" type="PointLight2D" parent="." unique_id=950325834]
+visible = false
+material = SubResource("CanvasItemMaterial_fjrip")
+position = Vector2(0.62499964, 1.2500057)
+scale = Vector2(0.86840963, 0.8676955)
+energy = 1.5
+shadow_enabled = true
+shadow_color = Color(0.1254902, 0.22352941, 0.8235294, 0.9647059)
+texture = SubResource("GradientTexture2D_smehm")

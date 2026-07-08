@@ -4,11 +4,23 @@ extends CharacterBody2D
 const SPEED = 150.0
 const JUMP_VELOCITY = -350.0
 
+@onready var terrorMode = %terrorMode
+@onready var flashlight = $flashlight
 @onready var animated_sprite = $AnimatedSprite2D
 var unlock_animation = false
+var unlock_terror = false
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
+
+	if Input.is_action_just_pressed("terror_mode"):
+		unlock_terror = true
+	
+	if unlock_terror == true:
+		flashlight.visible = true
+		terrorMode.visible = true
+	
+
 	if Input.is_action_just_pressed("dead"):
 		if unlock_animation == false:
 			unlock_animation = true
