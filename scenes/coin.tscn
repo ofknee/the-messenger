@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cn6jvt04v4gms"]
+
+[ext_resource type="Script" uid="uid://0k63op6dcvot" path="res://scenes/coin.gd" id="1_i64fm"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8o121"]
+radius = 3.0
+height = 14.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hlagj"]
+
+[node name="Coin" type="Area2D" unique_id=1867022525]
+script = ExtResource("1_i64fm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=345455764]
+shape = SubResource("CapsuleShape2D_8o121")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1138561123]
+sprite_frames = SubResource("SpriteFrames_hlagj")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
