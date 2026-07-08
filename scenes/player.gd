@@ -9,7 +9,7 @@ const JUMP_VELOCITY = -450.0
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
-		velocity += get_gravity() * delta
+		velocity += get_gravity() * delta * 1.3
 		animated_sprite.play("fall")
 		
 	# Handle jump.
