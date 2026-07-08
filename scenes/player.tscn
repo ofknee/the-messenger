@@ -111,19 +111,19 @@ region = Rect2(190, 0, 38, 28)
 [sub_resource type="SpriteFrames" id="SpriteFrames_8o121"]
 animations = [{
 "frames": [{
-"duration": 1.0,
+"duration": 2.0,
 "texture": SubResource("AtlasTexture_a38lo")
 }, {
-"duration": 1.0,
+"duration": 2.0,
 "texture": SubResource("AtlasTexture_4ni07")
 }, {
-"duration": 1.0,
+"duration": 2.0,
 "texture": SubResource("AtlasTexture_l71n6")
 }, {
-"duration": 1.0,
+"duration": 2.0,
 "texture": SubResource("AtlasTexture_ke2ow")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"dead",
 "speed": 5.0
 }, {
@@ -225,8 +225,8 @@ script = ExtResource("1_fjrip")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1602055964]
 sprite_frames = SubResource("SpriteFrames_8o121")
-animation = &"land"
-frame_progress = 0.9127484
+animation = &"dead"
+autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=537230496]
 position = Vector2(1, 4)
