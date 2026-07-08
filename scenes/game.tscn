@@ -9,11 +9,13 @@
 position = Vector2(0, -210)
 
 [node name="Player" parent="." unique_id=1850920723 instance=ExtResource("1_uwrxv")]
+position = Vector2(4.7683716e-07, 39.999992)
 scale = Vector2(1.6, 1.6)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1474716870]
-zoom = Vector2(2.6, 2.6)
+zoom = Vector2(2, 2)
 position_smoothing_enabled = true
 drag_horizontal_enabled = true
+drag_vertical_offset = -1.0
 drag_left_margin = 1.0
 drag_right_margin = 1.0
