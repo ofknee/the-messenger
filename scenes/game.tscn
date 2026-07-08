@@ -1,7 +1,14 @@
 [gd_scene format=3 uid="uid://5xj74i7g3fan"]
 
 [ext_resource type="PackedScene" uid="uid://bao4fujosvh2v" path="res://scenes/player.tscn" id="1_uwrxv"]
+[ext_resource type="PackedScene" uid="uid://c8iyeaju6mpb0" path="res://scenes/tile_map_layer.tscn" id="1_yqjtg"]
 
 [node name="Game" type="Node2D" unique_id=630479902]
 
+[node name="Map" parent="." unique_id=1775520249 instance=ExtResource("1_yqjtg")]
+position = Vector2(-6712, 958)
+
 [node name="Player" parent="." unique_id=1850920723 instance=ExtResource("1_uwrxv")]
+scale = Vector2(2, 2)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1474716870]
