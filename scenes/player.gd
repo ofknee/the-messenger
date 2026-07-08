@@ -10,7 +10,7 @@ var unlock_animation = false
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
-		velocity += get_gravity() * delta
+		velocity += get_gravity() * delta * 1.3
 		if unlock_animation == true:
 			animated_sprite.play("fall")
 		
