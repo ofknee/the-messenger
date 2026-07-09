@@ -4,6 +4,16 @@
 [ext_resource type="PackedScene" uid="uid://c8iyeaju6mpb0" path="res://scenes/tile_map_layer.tscn" id="1_yqjtg"]
 [ext_resource type="Script" uid="uid://bugwb66xumgn8" path="res://scenes/ui.gd" id="3_lbhrr"]
 [ext_resource type="Texture2D" uid="uid://dvt6p0w7dnb63" path="res://assets/ui/coin.png" id="3_lnu2h"]
+[ext_resource type="Texture2D" uid="uid://erqp46imeibv" path="res://assets/ui/UI_TravelBook_FrameSelect01b.png" id="4_iywne"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lbhrr"]
+texture = ExtResource("4_iywne")
+texture_margin_left = 8.0
+texture_margin_top = 8.0
+texture_margin_right = 8.0
+texture_margin_bottom = 8.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
 
 [node name="Game" type="Node2D" unique_id=630479902]
 
@@ -37,23 +47,55 @@ size_flags_vertical = 3
 
 [node name="MarginContainer" type="MarginContainer" parent="UI/Control" unique_id=366588021]
 layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 offset_transform_enabled = true
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
 
 [node name="Panel" type="Panel" parent="UI/Control/MarginContainer" unique_id=97814743]
+custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_lbhrr")
 
-[node name="MarginContainer" type="MarginContainer" parent="UI/Control/MarginContainer/Panel" unique_id=1134672212]
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/Control/MarginContainer/Panel" unique_id=436397762]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 10.0
+offset_right = 67.0
+offset_bottom = 45.0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="UI/Control/MarginContainer/Panel/MarginContainer" unique_id=436397762]
+[node name="RichTextLabel" type="RichTextLabel" parent="UI/Control/MarginContainer/Panel/HBoxContainer" unique_id=1650289716]
 layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/normal_font_size = 32
+text = "1"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="RichTextLabel" type="RichTextLabel" parent="UI/Control/MarginContainer/Panel/MarginContainer/HBoxContainer" unique_id=1650289716]
+[node name="MarginContainer" type="MarginContainer" parent="UI/Control/MarginContainer/Panel/HBoxContainer" unique_id=1011328727]
 layout_mode = 2
-text = "im sooo rich"
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
 
-[node name="TextureRect" type="TextureRect" parent="UI/Control/MarginContainer/Panel/MarginContainer/HBoxContainer" unique_id=612954176]
+[node name="TextureRect" type="TextureRect" parent="UI/Control/MarginContainer/Panel/HBoxContainer/MarginContainer" unique_id=612954176]
+custom_minimum_size = Vector2(14, 14)
 layout_mode = 2
 texture = ExtResource("3_lnu2h")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/Control/MarginContainer/Panel" unique_id=1134672212]
+layout_mode = 1
+offset_right = 67.0
+offset_bottom = 45.0
+theme_override_constants/margin_left = 10
