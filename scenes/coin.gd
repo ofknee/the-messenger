@@ -1,8 +1,7 @@
 extends Area2D
-@onready var coins = Global.coins
 @onready var anim = $AnimatedSprite2D
 @export var type : CoinType
-var unlock_animation : bool = false
+var unlock_animation : bool = true
 
 func _ready() -> void:
 	anim.sprite_frames = type.anim
@@ -11,4 +10,6 @@ func _ready() -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
-		coins += type.value
+		Global.coins += type.value
+	queue_free()
+	print(Global.coins)

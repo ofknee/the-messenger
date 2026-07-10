@@ -1,6 +1,6 @@
 [gd_resource type="SpriteFrames" format=3 uid="uid://bwsybdni30vgi"]
 
-[ext_resource type="Texture2D" uid="uid://dlfaww4fv7l4b" path="res://assets/environment/blue eyeball coin.png" id="1_1xwk7"]
+[ext_resource type="Texture2D" uid="uid://dlfaww4fv7l4b" path="res://assets/environment/coins/blue eyeball coin.png" id="1_1xwk7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_11l1o"]
 atlas = ExtResource("1_1xwk7")
@@ -91,5 +91,5 @@ animations = [{
 }],
 "loop": 1,
 "name": &"default",
-"speed": 5.0
+"speed": 10.0
 }]

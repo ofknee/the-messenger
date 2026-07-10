@@ -4,16 +4,15 @@
 [ext_resource type="PackedScene" uid="uid://c8iyeaju6mpb0" path="res://scenes/tile_map_layer.tscn" id="1_yqjtg"]
 [ext_resource type="Script" uid="uid://bugwb66xumgn8" path="res://scenes/ui.gd" id="3_lbhrr"]
 [ext_resource type="Texture2D" uid="uid://dvt6p0w7dnb63" path="res://assets/ui/coin.png" id="3_lnu2h"]
-[ext_resource type="Texture2D" uid="uid://erqp46imeibv" path="res://assets/ui/UI_TravelBook_FrameSelect01b.png" id="4_iywne"]
+[ext_resource type="Texture2D" uid="uid://cx2m72tws2xe8" path="res://assets/ui/hand-drawn-panel.png" id="4_p57ef"]
+[ext_resource type="FontFile" uid="uid://dqqerscdm1bn6" path="res://assets/ui/fonts/minecraftia (1)/Minecraftia-Regular.ttf" id="5_u5sy4"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lbhrr"]
-texture = ExtResource("4_iywne")
-texture_margin_left = 8.0
-texture_margin_top = 8.0
-texture_margin_right = 8.0
-texture_margin_bottom = 8.0
-axis_stretch_horizontal = 1
-axis_stretch_vertical = 1
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iywne"]
+texture = ExtResource("4_p57ef")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
 
 [node name="Game" type="Node2D" unique_id=630479902]
 
@@ -25,10 +24,11 @@ position = Vector2(4.7683716e-07, 39.999992)
 scale = Vector2(1.6, 1.6)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1474716870]
-zoom = Vector2(2, 2)
+zoom = Vector2(1.7, 1.7)
 position_smoothing_enabled = true
+position_smoothing_speed = 2.0
 drag_horizontal_enabled = true
-drag_vertical_offset = -1.0
+drag_vertical_offset = -0.66
 drag_left_margin = 1.0
 drag_right_margin = 1.0
 
@@ -53,49 +53,54 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 offset_transform_enabled = true
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
 
-[node name="Panel" type="Panel" parent="UI/Control/MarginContainer" unique_id=97814743]
-custom_minimum_size = Vector2(100, 50)
+[node name="Bank" type="PanelContainer" parent="UI/Control/MarginContainer" unique_id=1556020514]
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-theme_override_styles/panel = SubResource("StyleBoxTexture_lbhrr")
+theme_override_styles/panel = SubResource("StyleBoxTexture_iywne")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="UI/Control/MarginContainer/Panel" unique_id=436397762]
-layout_mode = 0
-offset_left = 10.0
-offset_right = 67.0
-offset_bottom = 45.0
-
-[node name="RichTextLabel" type="RichTextLabel" parent="UI/Control/MarginContainer/Panel/HBoxContainer" unique_id=1650289716]
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/Control/MarginContainer/Bank" unique_id=436397762]
 layout_mode = 2
-size_flags_horizontal = 3
-theme_override_font_sizes/normal_font_size = 32
-text = "1"
+
+[node name="MarginContainer2" type="MarginContainer" parent="UI/Control/MarginContainer/Bank/HBoxContainer" unique_id=1134672212]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="UI/Control/MarginContainer/Bank/HBoxContainer/MarginContainer2" unique_id=1650289716]
+layout_mode = 2
+size_flags_horizontal = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 2)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.50980395)
+theme_override_constants/shadow_outline_size = 6
+theme_override_fonts/normal_font = ExtResource("5_u5sy4")
+theme_override_font_sizes/normal_font_size = 22
+text = "67676767"
 fit_content = true
 autowrap_mode = 0
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="UI/Control/MarginContainer/Panel/HBoxContainer" unique_id=1011328727]
+[node name="MarginContainer" type="MarginContainer" parent="UI/Control/MarginContainer/Bank/HBoxContainer" unique_id=1011328727]
 layout_mode = 2
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 6
 
-[node name="TextureRect" type="TextureRect" parent="UI/Control/MarginContainer/Panel/HBoxContainer/MarginContainer" unique_id=612954176]
+[node name="TextureRect2" type="TextureRect" parent="UI/Control/MarginContainer/Bank/HBoxContainer/MarginContainer" unique_id=1250522120]
+modulate = Color(1.0737633, 1.0737633, 1.0737633, 1)
 custom_minimum_size = Vector2(14, 14)
 layout_mode = 2
+offset_transform_enabled = true
 texture = ExtResource("3_lnu2h")
 expand_mode = 3
 stretch_mode = 5
-
-[node name="MarginContainer" type="MarginContainer" parent="UI/Control/MarginContainer/Panel" unique_id=1134672212]
-layout_mode = 1
-offset_right = 67.0
-offset_bottom = 45.0
-theme_override_constants/margin_left = 10
