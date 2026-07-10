@@ -215,9 +215,9 @@ rotation = -1.5764987
 [node name="CollisionShape2D" type="CollisionShape2D" parent="killzone" unique_id=17142866]
 shape = SubResource("RectangleShape2D_l57lt")
 
-[node name="Spike1" type="Sprite2D" parent="." unique_id=1565781562]
-position = Vector2(115, -75.00001)
-rotation = -1.5803709
+[node name="Spike1" type="Sprite2D" parent="killzone" unique_id=1565781562]
+position = Vector2(0.022819519, -3.9999313)
+rotation = -0.0038721554
 scale = Vector2(1.7199658, 1.7199658)
 texture = ExtResource("8_gee14")
 
