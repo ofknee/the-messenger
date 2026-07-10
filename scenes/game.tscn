@@ -336,5 +336,9 @@ rotation = -0.0038721554
 scale = Vector2(1.7199658, 1.7199658)
 texture = ExtResource("8_gee14")
 
+[node name="startPos" type="Marker2D" parent="." unique_id=461214867]
+unique_name_in_owner = true
+position = Vector2(1, 50)
+
 [connection signal="pressed" from="UI/Control/MarginContainer/ShopButton/Button" to="UI" method="_on_button_pressed"]
 [connection signal="pressed" from="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer/LeaveShop" to="UI" method="_on_leave_shop_pressed"]

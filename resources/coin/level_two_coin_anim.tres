@@ -2,18 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://dlfaww4fv7l4b" path="res://assets/environment/coins/blue eyeball coin.png" id="1_1xwk7"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_11l1o"]
-atlas = ExtResource("1_1xwk7")
-region = Rect2(0, 0, 14, 14)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_d14el"]
-atlas = ExtResource("1_1xwk7")
-region = Rect2(14, 0, 14, 14)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1ikuy"]
-atlas = ExtResource("1_1xwk7")
-region = Rect2(28, 0, 14, 14)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_wnlwo"]
 atlas = ExtResource("1_1xwk7")
 region = Rect2(0, 14, 14, 14)
@@ -50,18 +38,21 @@ region = Rect2(14, 42, 14, 14)
 atlas = ExtResource("1_1xwk7")
 region = Rect2(28, 42, 14, 14)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_11l1o"]
+atlas = ExtResource("1_1xwk7")
+region = Rect2(0, 0, 14, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d14el"]
+atlas = ExtResource("1_1xwk7")
+region = Rect2(14, 0, 14, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ikuy"]
+atlas = ExtResource("1_1xwk7")
+region = Rect2(28, 0, 14, 14)
+
 [resource]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_11l1o")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_d14el")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1ikuy")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_wnlwo")
 }, {
@@ -88,6 +79,15 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ls27i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_11l1o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d14el")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ikuy")
 }],
 "loop": 1,
 "name": &"default",
