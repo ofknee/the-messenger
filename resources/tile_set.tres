@@ -2,7 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://b3kqdss6qyo55" path="res://assets/environment/Kings and Pigs/Sprites/14-TileSets/Terrain (32x32).png" id="1_wvt7e"]
 [ext_resource type="Texture2D" uid="uid://cqtig7k460a5h" path="res://assets/environment/Kings and Pigs/Sprites/14-TileSets/Decorations (32x32).png" id="2_k764t"]
-[ext_resource type="PackedScene" uid="uid://cn6jvt04v4gms" path="res://scenes/coin.tscn" id="3_0naqh"]
+[ext_resource type="PackedScene" uid="uid://17hcye60hs7t" path="res://resources/coin/coin1.tscn" id="4_51i6s"]
+[ext_resource type="PackedScene" uid="uid://df3uu1104e8ns" path="res://resources/coin/coin2.tscn" id="5_dtrn4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_okeva"]
 resource_name = "BigBlocks"
@@ -279,8 +280,8 @@ texture_region_size = Vector2i(32, 32)
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_xd6c0"]
 resource_name = "yo idk what to name this"
-scenes/1/scene = ExtResource("3_0naqh")
-scenes/2/scene = ExtResource("3_0naqh")
+scenes/3/scene = ExtResource("4_51i6s")
+scenes/4/scene = ExtResource("5_dtrn4")
 
 [resource]
 tile_size = Vector2i(32, 32)
