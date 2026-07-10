@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cx2m72tws2xe8" path="res://assets/ui/hand-drawn-panel.png" id="4_p57ef"]
 [ext_resource type="FontFile" uid="uid://dqqerscdm1bn6" path="res://assets/ui/fonts/minecraftia (1)/Minecraftia-Regular.ttf" id="5_u5sy4"]
 [ext_resource type="PackedScene" uid="uid://bstmedp222n3g" path="res://scenes/killzone.tscn" id="7_u5sy4"]
+[ext_resource type="Texture2D" uid="uid://cro3plilao5kx" path="res://assets/environment/spike1.png" id="8_gee14"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_yqjtg"]
 blend_mode = 2
@@ -146,3 +147,9 @@ rotation = -1.5764987
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="killzone" unique_id=17142866]
 shape = SubResource("RectangleShape2D_l57lt")
+
+[node name="Spike1" type="Sprite2D" parent="." unique_id=1565781562]
+position = Vector2(115, -75.00001)
+rotation = -1.5803709
+scale = Vector2(1.7199658, 1.7199658)
+texture = ExtResource("8_gee14")
