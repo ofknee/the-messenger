@@ -7,12 +7,16 @@ const JUMP_VELOCITY = -370.0
 @onready var terrorMode = %terrorMode
 @onready var flashlight = $flashlight
 @onready var animated_sprite = $AnimatedSprite2D
+@onready var start_pos = %startPos
 var unlocked = Global.unlocked
 #var unlock_animation = false
 #var unlock_terror = false
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
+	if Global.dead == true:
+		global_position = start_pos.global_position
+		Global.dead = false
 
 	if Input.is_action_just_pressed("terror_mode"):
 		if unlocked["terrorMode"] == false:

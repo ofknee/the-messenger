@@ -7,6 +7,8 @@ var unlocked = {
 	"terrorMode" : false,
 }
 
+var dead = false
+
 signal currency_changed(new_currency: int)
 var coins: int = 0: ##starting money
 	set(val):
