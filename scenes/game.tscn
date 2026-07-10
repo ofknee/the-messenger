@@ -340,11 +340,7 @@ texture = ExtResource("8_gee14")
 unique_name_in_owner = true
 position = Vector2(1, 50)
 
-[node name="checkpoint" parent="." unique_id=213027284 instance=ExtResource("11_kvpfn")]
-position = Vector2(-110, 38)
-
-[node name="checkpoint2" parent="." unique_id=438095449 instance=ExtResource("11_kvpfn")]
-position = Vector2(-77, -224)
+[node name="Area2D" parent="." unique_id=213027284 instance=ExtResource("11_kvpfn")]
 
 [connection signal="pressed" from="UI/Control/MarginContainer/ShopButton/Button" to="UI" method="_on_button_pressed"]
 [connection signal="pressed" from="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer/LeaveShop" to="UI" method="_on_leave_shop_pressed"]
