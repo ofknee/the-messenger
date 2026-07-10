@@ -49,5 +49,5 @@ animations = [{
 }],
 "loop": 1,
 "name": &"coin",
-"speed": 10.0
+"speed": 5.0
 }]
