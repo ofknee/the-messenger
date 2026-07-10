@@ -4,6 +4,7 @@ var unlocked = {
 	"animation" : false,
 	"sfx" : false,
 	"color" : false,
+	"terrorMode" : false,
 }
 
 signal currency_changed(new_currency: int)
