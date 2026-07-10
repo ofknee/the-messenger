@@ -13,13 +13,14 @@ func setup():
 	label.text = name
 	price_display.text = str(price)
 
-func _on_pressed() -> void:  ##spawn eye laccording to button type
+func _on_pressed() -> void: 
 	if payable():
 		if bought == false:
 			Global.coins -= price
 			print("bought: ",thing)
 			modulate.a = 0.5
 			bought = true
+			Global.unlocked[thing] = true ##unlock
 		else:
 			print("alr bought: ",thing)
 	else:
