@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CoinType" format=3 uid="uid://cox8oewv3s5n6"]
+
+[ext_resource type="SpriteFrames" uid="uid://bwsybdni30vgi" path="res://resources/coin/level_two_coin_anim.tres" id="1_6k8ie"]
+[ext_resource type="Script" uid="uid://cyqhl7xemjfka" path="res://resources/coin/coin_type.gd" id="2_vka8y"]
+
+[resource]
+script = ExtResource("2_vka8y")
+anim = ExtResource("1_6k8ie")
+value = 5
+metadata/_custom_type_script = "uid://cyqhl7xemjfka"
