@@ -58,6 +58,10 @@ price = 5
 layout_mode = 2
 price = 7
 
-[node name="HELL MODE" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=1236946975 instance=ExtResource("2_xfvoa")]
+[node name="LEVEL2" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=1236946975 instance=ExtResource("2_xfvoa")]
+layout_mode = 2
+price = 5
+
+[node name="LEVEL3" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=50084127 instance=ExtResource("2_xfvoa")]
 layout_mode = 2
 price = 5
