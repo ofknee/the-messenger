@@ -7,7 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://cx2m72tws2xe8" path="res://assets/ui/hand-drawn-panel.png" id="4_p57ef"]
 [ext_resource type="FontFile" uid="uid://dqqerscdm1bn6" path="res://assets/ui/fonts/minecraftia (1)/Minecraftia-Regular.ttf" id="5_u5sy4"]
 [ext_resource type="PackedScene" uid="uid://bstmedp222n3g" path="res://scenes/killzone.tscn" id="7_u5sy4"]
+[ext_resource type="Texture2D" uid="uid://c2pksn2gtmda8" path="res://assets/ui/Complete_UI_Book_Styles_Pack_Free_v1.0 2/01_TravelBookLite/Sprites/UI_TravelBook_BookCover01a.png" id="7_vtaks"]
 [ext_resource type="Texture2D" uid="uid://cro3plilao5kx" path="res://assets/environment/spike1.png" id="8_gee14"]
+[ext_resource type="PackedScene" uid="uid://vpnklqxmedca" path="res://scenes/pay_button.tscn" id="8_kvpfn"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_yqjtg"]
 blend_mode = 2
@@ -24,6 +26,13 @@ fill_from = Vector2(0.50869566, 0.4978261)
 fill_to = Vector2(0.12173913, 0.76304346)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iywne"]
+texture = ExtResource("4_p57ef")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_43hlm"]
 texture = ExtResource("4_p57ef")
 texture_margin_left = 10.0
 texture_margin_top = 10.0
@@ -205,8 +214,106 @@ texture = ExtResource("3_lnu2h")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="Popup" type="Popup" parent="UI/Control/MarginContainer" unique_id=2088766821]
-oversampling_override = 1.0
+[node name="Shop" type="Control" parent="UI/Control/MarginContainer" unique_id=823807057]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="NinePatchRect" type="TextureRect" parent="UI/Control/MarginContainer/Shop" unique_id=117715359]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_vtaks")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="UI/Control/MarginContainer/Shop" unique_id=415410047]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/Control/MarginContainer/Shop/ScrollContainer" unique_id=575001956]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer" unique_id=1643178641]
+layout_mode = 2
+
+[node name="ANIMATION" parent="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1763438241 instance=ExtResource("8_kvpfn")]
+layout_mode = 2
+price = 2
+thing = "animation"
+
+[node name="SOUND EFFECTS" parent="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer" unique_id=895757374 instance=ExtResource("8_kvpfn")]
+layout_mode = 2
+price = 0
+thing = "sfx"
+
+[node name="PARTICLES" parent="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1964785691 instance=ExtResource("8_kvpfn")]
+layout_mode = 2
+price = 5
+thing = "particles"
+
+[node name="COLOR" parent="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer" unique_id=787159581 instance=ExtResource("8_kvpfn")]
+layout_mode = 2
+price = 7
+thing = "color"
+
+[node name="LEVEL2" parent="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1236946975 instance=ExtResource("8_kvpfn")]
+layout_mode = 2
+price = 5
+thing = "level2"
+
+[node name="LEVEL3" parent="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer" unique_id=50084127 instance=ExtResource("8_kvpfn")]
+layout_mode = 2
+price = 5
+thing = "level3"
+
+[node name="HSeparator" type="HSeparator" parent="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer" unique_id=870113532]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+theme_override_constants/separation = 11
+
+[node name="LeaveShop" type="Button" parent="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1298115920]
+self_modulate = Color(1.6062199, 1.0125897, 0.37801942, 1)
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_43hlm")
+
+[node name="Label" type="RichTextLabel" parent="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer/LeaveShop" unique_id=1886448315]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 2)
+mouse_filter = 1
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.5058824)
+theme_override_constants/shadow_outline_size = 2
+theme_override_fonts/normal_font = ExtResource("5_u5sy4")
+text = "LEAVE"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator2" type="HSeparator" parent="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1589589803]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+theme_override_constants/separation = 11
 
 [node name="killzone" parent="." unique_id=1339280733 instance=ExtResource("7_u5sy4")]
 position = Vector2(119, -74.99999)
@@ -222,3 +329,4 @@ scale = Vector2(1.7199658, 1.7199658)
 texture = ExtResource("8_gee14")
 
 [connection signal="pressed" from="UI/Control/MarginContainer/ShopButton/Button" to="UI" method="_on_button_pressed"]
+[connection signal="pressed" from="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer/LeaveShop" to="UI" method="_on_leave_shop_pressed"]

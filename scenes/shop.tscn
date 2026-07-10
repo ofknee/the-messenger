@@ -2,6 +2,15 @@
 
 [ext_resource type="Texture2D" uid="uid://c2pksn2gtmda8" path="res://assets/ui/Complete_UI_Book_Styles_Pack_Free_v1.0 2/01_TravelBookLite/Sprites/UI_TravelBook_BookCover01a.png" id="1_lx5au"]
 [ext_resource type="PackedScene" uid="uid://vpnklqxmedca" path="res://scenes/pay_button.tscn" id="2_xfvoa"]
+[ext_resource type="Texture2D" uid="uid://cx2m72tws2xe8" path="res://assets/ui/hand-drawn-panel.png" id="3_032fp"]
+[ext_resource type="FontFile" uid="uid://dqqerscdm1bn6" path="res://assets/ui/fonts/minecraftia (1)/Minecraftia-Regular.ttf" id="4_2fc2m"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_43hlm"]
+texture = ExtResource("3_032fp")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
 
 [node name="Shop" type="Control" unique_id=823807057]
 layout_mode = 3
@@ -71,3 +80,39 @@ thing = "level2"
 layout_mode = 2
 price = 5
 thing = "level3"
+
+[node name="HSeparator" type="HSeparator" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=870113532]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+theme_override_constants/separation = 11
+
+[node name="Button" type="Button" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=1298115920]
+self_modulate = Color(1.6062199, 1.0125897, 0.37801942, 1)
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_43hlm")
+
+[node name="Label" type="RichTextLabel" parent="ScrollContainer/MarginContainer/VBoxContainer/Button" unique_id=1886448315]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 2)
+mouse_filter = 1
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.5058824)
+theme_override_constants/shadow_outline_size = 2
+theme_override_fonts/normal_font = ExtResource("4_2fc2m")
+text = "LEAVE"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator2" type="HSeparator" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=1589589803]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+theme_override_constants/separation = 11
