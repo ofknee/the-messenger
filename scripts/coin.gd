@@ -2,12 +2,11 @@ extends Area2D
 @onready var anim = $AnimatedSprite2D
 @onready var animation_player = $AnimationPlayer
 @export var type : CoinType
-var unlock_animation : bool = true
-var unlock_sound : bool = false
+var unlocked = Global.unlocked
 
 func _ready() -> void:
 	anim.sprite_frames = type.anim
-	if unlock_animation:
+	if unlocked["animation"]:
 		anim.play()
 
 func _on_body_entered(body: Node2D) -> void:
