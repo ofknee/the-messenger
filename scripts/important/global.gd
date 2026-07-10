@@ -1,5 +1,10 @@
 extends Node
 
+var unlocked = {
+	"animation" : false,
+	"sfx" : false,
+	"color" : false,
+}
 
 signal currency_changed(new_currency: int)
 var coins: int = 0: ##starting money

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://53o77c38bxyc"]
 
 [ext_resource type="Texture2D" uid="uid://c2pksn2gtmda8" path="res://assets/ui/Complete_UI_Book_Styles_Pack_Free_v1.0 2/01_TravelBookLite/Sprites/UI_TravelBook_BookCover01a.png" id="1_lx5au"]
+[ext_resource type="PackedScene" uid="uid://vpnklqxmedca" path="res://scenes/pay_button.tscn" id="2_xfvoa"]
 
 [node name="Shop" type="Control" unique_id=823807057]
 layout_mode = 3
@@ -29,5 +30,38 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer" unique_id=1643178641]
+[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer" unique_id=575001956]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/MarginContainer" unique_id=1643178641]
+layout_mode = 2
+
+[node name="ANIMATION" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=1763438241 instance=ExtResource("2_xfvoa")]
+layout_mode = 2
+price = 2
+
+[node name="SOUND EFFECTS" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=895757374 instance=ExtResource("2_xfvoa")]
+layout_mode = 2
+price = 5
+
+[node name="PARTICLES" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=1964785691 instance=ExtResource("2_xfvoa")]
+layout_mode = 2
+price = 5
+
+[node name="COLOR" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=787159581 instance=ExtResource("2_xfvoa")]
+layout_mode = 2
+price = 7
+
+[node name="LEVEL2" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=1236946975 instance=ExtResource("2_xfvoa")]
+layout_mode = 2
+price = 5
+
+[node name="LEVEL3" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=50084127 instance=ExtResource("2_xfvoa")]
+layout_mode = 2
+price = 5
