@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cn6jvt04v4gms"]
 
-[ext_resource type="Script" uid="uid://0k63op6dcvot" path="res://scenes/coin.gd" id="1_i64fm"]
+[ext_resource type="Script" uid="uid://0k63op6dcvot" path="res://scenes/ui/coin.gd" id="1_i64fm"]
 [ext_resource type="SpriteFrames" uid="uid://cs54qlysqwd4g" path="res://resources/coin/basic_coin_anim.tres" id="2_i64fm"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8o121"]
