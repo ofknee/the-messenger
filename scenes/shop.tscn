@@ -45,23 +45,29 @@ layout_mode = 2
 [node name="ANIMATION" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=1763438241 instance=ExtResource("2_xfvoa")]
 layout_mode = 2
 price = 2
+thing = "animation"
 
 [node name="SOUND EFFECTS" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=895757374 instance=ExtResource("2_xfvoa")]
 layout_mode = 2
-price = 5
+price = 0
+thing = "sfx"
 
 [node name="PARTICLES" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=1964785691 instance=ExtResource("2_xfvoa")]
 layout_mode = 2
 price = 5
+thing = "particles"
 
 [node name="COLOR" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=787159581 instance=ExtResource("2_xfvoa")]
 layout_mode = 2
 price = 7
+thing = "color"
 
 [node name="LEVEL2" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=1236946975 instance=ExtResource("2_xfvoa")]
 layout_mode = 2
 price = 5
+thing = "level2"
 
 [node name="LEVEL3" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=50084127 instance=ExtResource("2_xfvoa")]
 layout_mode = 2
 price = 5
+thing = "level3"
