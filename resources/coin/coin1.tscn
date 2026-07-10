@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://17hcye60hs7t"]
 
-[ext_resource type="PackedScene" uid="uid://cn6jvt04v4gms" path="res://scenes/coin.tscn" id="1_aurl8"]
+[ext_resource type="PackedScene" uid="uid://cn6jvt04v4gms" path="res://scenes/ui/coin.tscn" id="1_aurl8"]
 [ext_resource type="Resource" uid="uid://rwoc1xxlldm6" path="res://resources/coin/basic_coin.tres" id="2_55bqa"]
 
 [node name="Coin" unique_id=1867022525 instance=ExtResource("1_aurl8")]
