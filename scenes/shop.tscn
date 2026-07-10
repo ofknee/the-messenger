@@ -61,6 +61,11 @@ layout_mode = 2
 price = 0
 thing = "sfx"
 
+[node name="TERROR MODE" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=966371271 instance=ExtResource("2_xfvoa")]
+layout_mode = 2
+price = 5
+thing = "terrorMode"
+
 [node name="PARTICLES" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=1964785691 instance=ExtResource("2_xfvoa")]
 layout_mode = 2
 price = 5

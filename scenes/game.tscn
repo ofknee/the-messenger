@@ -264,6 +264,11 @@ layout_mode = 2
 price = 5
 thing = "particles"
 
+[node name="TERROR MODE" parent="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer" unique_id=2143273714 instance=ExtResource("8_kvpfn")]
+layout_mode = 2
+price = 5
+thing = "terrorMode"
+
 [node name="COLOR" parent="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer" unique_id=787159581 instance=ExtResource("8_kvpfn")]
 layout_mode = 2
 price = 7
@@ -280,6 +285,7 @@ price = 5
 thing = "level3"
 
 [node name="HSeparator" type="HSeparator" parent="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer" unique_id=870113532]
+self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 theme_override_constants/separation = 11
@@ -311,6 +317,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="HSeparator2" type="HSeparator" parent="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1589589803]
+modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 theme_override_constants/separation = 11
