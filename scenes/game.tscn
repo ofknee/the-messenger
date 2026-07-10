@@ -2,7 +2,17 @@
 
 [ext_resource type="PackedScene" uid="uid://bao4fujosvh2v" path="res://scenes/player.tscn" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://c8iyeaju6mpb0" path="res://scenes/tile_map_layer.tscn" id="1_yqjtg"]
-[ext_resource type="PackedScene" uid="uid://bstmedp222n3g" path="res://scenes/killzone.tscn" id="3_lnu2h"]
+[ext_resource type="Script" uid="uid://bugwb66xumgn8" path="res://scenes/ui.gd" id="3_lbhrr"]
+[ext_resource type="Texture2D" uid="uid://dvt6p0w7dnb63" path="res://assets/ui/coin.png" id="3_lnu2h"]
+[ext_resource type="Texture2D" uid="uid://cx2m72tws2xe8" path="res://assets/ui/hand-drawn-panel.png" id="4_p57ef"]
+[ext_resource type="FontFile" uid="uid://dqqerscdm1bn6" path="res://assets/ui/fonts/minecraftia (1)/Minecraftia-Regular.ttf" id="5_u5sy4"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iywne"]
+texture = ExtResource("4_p57ef")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_yqjtg"]
 blend_mode = 2
@@ -17,8 +27,6 @@ height = 85
 fill = 1
 fill_from = Vector2(0.50869566, 0.4978261)
 fill_to = Vector2(0.12173913, 0.76304346)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_l57lt"]
 
 [node name="Game" type="Node2D" unique_id=630479902]
 
@@ -38,10 +46,11 @@ position = Vector2(4.7683716e-07, 39.999992)
 scale = Vector2(1.6, 1.6)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1474716870]
-zoom = Vector2(2, 2)
+zoom = Vector2(1.7, 1.7)
 position_smoothing_enabled = true
+position_smoothing_speed = 2.0
 drag_horizontal_enabled = true
-drag_vertical_offset = -1.0
+drag_vertical_offset = -0.66
 drag_left_margin = 1.0
 drag_right_margin = 1.0
 
@@ -54,10 +63,75 @@ energy = 1.5
 shadow_enabled = true
 shadow_color = Color(0.1254902, 0.22352941, 0.8235294, 0.9647059)
 texture = SubResource("GradientTexture2D_lbhrr")
+[node name="UI" type="CanvasLayer" parent="." unique_id=1540499957]
+script = ExtResource("3_lbhrr")
 
-[node name="killzone" parent="." unique_id=1339280733 instance=ExtResource("3_lnu2h")]
-position = Vector2(111, -73)
+[node name="Control" type="Control" parent="UI" unique_id=411163068]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone" unique_id=1385369215]
-position = Vector2(1, -1)
-shape = SubResource("RectangleShape2D_l57lt")
+[node name="MarginContainer" type="MarginContainer" parent="UI/Control" unique_id=366588021]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="Bank" type="PanelContainer" parent="UI/Control/MarginContainer" unique_id=1556020514]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_iywne")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/Control/MarginContainer/Bank" unique_id=436397762]
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="UI/Control/MarginContainer/Bank/HBoxContainer" unique_id=1134672212]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="UI/Control/MarginContainer/Bank/HBoxContainer/MarginContainer2" unique_id=1650289716]
+layout_mode = 2
+size_flags_horizontal = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 2)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.50980395)
+theme_override_constants/shadow_outline_size = 6
+theme_override_fonts/normal_font = ExtResource("5_u5sy4")
+theme_override_font_sizes/normal_font_size = 22
+text = "67676767"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/Control/MarginContainer/Bank/HBoxContainer" unique_id=1011328727]
+layout_mode = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 6
+
+[node name="TextureRect2" type="TextureRect" parent="UI/Control/MarginContainer/Bank/HBoxContainer/MarginContainer" unique_id=1250522120]
+modulate = Color(1.0737633, 1.0737633, 1.0737633, 1)
+custom_minimum_size = Vector2(14, 14)
+layout_mode = 2
+offset_transform_enabled = true
+texture = ExtResource("3_lnu2h")
+expand_mode = 3
+stretch_mode = 5

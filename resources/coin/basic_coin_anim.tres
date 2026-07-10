@@ -1,6 +1,6 @@
 [gd_resource type="SpriteFrames" format=3 uid="uid://cs54qlysqwd4g"]
 
-[ext_resource type="Texture2D" uid="uid://bvr5eyaumyvi8" path="res://assets/environment/coin spritesheet.png" id="1_3cbka"]
+[ext_resource type="Texture2D" uid="uid://bvr5eyaumyvi8" path="res://assets/environment/coins/coin spritesheet.png" id="1_3cbka"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_llfh3"]
 atlas = ExtResource("1_3cbka")
@@ -49,5 +49,5 @@ animations = [{
 }],
 "loop": 1,
 "name": &"coin",
-"speed": 5.0
+"speed": 10.0
 }]

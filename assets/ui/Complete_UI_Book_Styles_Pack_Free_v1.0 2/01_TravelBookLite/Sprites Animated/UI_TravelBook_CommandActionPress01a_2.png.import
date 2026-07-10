@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bvr5eyaumyvi8"
-path="res://.godot/imported/coin spritesheet.png-548ed741715eb41afaccc59688c99306.ctex"
+uid="uid://dcgtdtafv4lx4"
+path="res://.godot/imported/UI_TravelBook_CommandActionPress01a_2.png-50895e6803aeb7410437958076ef4238.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/environment/coin spritesheet.png"
-dest_files=["res://.godot/imported/coin spritesheet.png-548ed741715eb41afaccc59688c99306.ctex"]
+source_file="res://assets/ui/Complete_UI_Book_Styles_Pack_Free_v1.0 2/01_TravelBookLite/Sprites Animated/UI_TravelBook_CommandActionPress01a_2.png"
+dest_files=["res://.godot/imported/UI_TravelBook_CommandActionPress01a_2.png-50895e6803aeb7410437958076ef4238.ctex"]
 
 [params]
 

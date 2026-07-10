@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://df3uu1104e8ns"]
+
+[ext_resource type="PackedScene" uid="uid://cn6jvt04v4gms" path="res://scenes/coin.tscn" id="1_2gt8e"]
+[ext_resource type="Resource" uid="uid://cox8oewv3s5n6" path="res://resources/coin/level_two_coin.tres" id="2_fd32l"]
+[ext_resource type="SpriteFrames" uid="uid://bwsybdni30vgi" path="res://resources/coin/level_two_coin_anim.tres" id="3_fd32l"]
+
+[node name="Coin" unique_id=1867022525 instance=ExtResource("1_2gt8e")]
+type = ExtResource("2_fd32l")
+
+[node name="AnimatedSprite2D" parent="." index="1" unique_id=1138561123]
+sprite_frames = ExtResource("3_fd32l")
+animation = &"default"

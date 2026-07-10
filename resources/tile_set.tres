@@ -2,7 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://b3kqdss6qyo55" path="res://assets/environment/Kings and Pigs/Sprites/14-TileSets/Terrain (32x32).png" id="1_wvt7e"]
 [ext_resource type="Texture2D" uid="uid://cqtig7k460a5h" path="res://assets/environment/Kings and Pigs/Sprites/14-TileSets/Decorations (32x32).png" id="2_k764t"]
-[ext_resource type="PackedScene" uid="uid://cn6jvt04v4gms" path="res://scenes/coin.tscn" id="3_0naqh"]
+[ext_resource type="PackedScene" uid="uid://17hcye60hs7t" path="res://resources/coin/coin1.tscn" id="2_xd6c0"]
+[ext_resource type="PackedScene" uid="uid://df3uu1104e8ns" path="res://resources/coin/coin2.tscn" id="3_51i6s"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_okeva"]
 resource_name = "BigBlocks"
@@ -234,6 +235,11 @@ texture_region_size = Vector2i(32, 32)
 8:5/0 = 0
 8:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_k764t"]
+resource_name = "coins"
+scenes/0/scene = ExtResource("2_xd6c0")
+scenes/1/scene = ExtResource("3_51i6s")
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0naqh"]
 resource_name = "MainDetails"
 texture = ExtResource("2_k764t")
@@ -277,11 +283,6 @@ texture_region_size = Vector2i(32, 32)
 4:4/0 = 0
 5:4/0 = 0
 
-[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_xd6c0"]
-resource_name = "yo idk what to name this"
-scenes/1/scene = ExtResource("3_0naqh")
-scenes/2/scene = ExtResource("3_0naqh")
-
 [resource]
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
@@ -292,4 +293,4 @@ terrain_set_0/terrain_1/name = "BG"
 terrain_set_0/terrain_1/color = Color(0.77752095, 1.540184e-05, 0.5425594, 1)
 sources/0 = SubResource("TileSetAtlasSource_okeva")
 sources/3 = SubResource("TileSetAtlasSource_0naqh")
-sources/5 = SubResource("TileSetScenesCollectionSource_xd6c0")
+sources/1 = SubResource("TileSetScenesCollectionSource_k764t")
