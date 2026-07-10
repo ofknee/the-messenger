@@ -208,7 +208,6 @@ stretch_mode = 5
 [node name="Popup" type="Popup" parent="UI/Control/MarginContainer" unique_id=2088766821]
 oversampling_override = 1.0
 
-[connection signal="pressed" from="UI/Control/MarginContainer/ShopButton/Button" to="UI" method="_on_button_pressed"]
 [node name="killzone" parent="." unique_id=1339280733 instance=ExtResource("7_u5sy4")]
 position = Vector2(119, -74.99999)
 rotation = -1.5764987
@@ -216,8 +215,10 @@ rotation = -1.5764987
 [node name="CollisionShape2D" type="CollisionShape2D" parent="killzone" unique_id=17142866]
 shape = SubResource("RectangleShape2D_l57lt")
 
-[node name="Spike1" type="Sprite2D" parent="." unique_id=1565781562]
-position = Vector2(115, -75.00001)
-rotation = -1.5803709
+[node name="Spike1" type="Sprite2D" parent="killzone" unique_id=1565781562]
+position = Vector2(0.022819519, -3.9999313)
+rotation = -0.0038721554
 scale = Vector2(1.7199658, 1.7199658)
 texture = ExtResource("8_gee14")
+
+[connection signal="pressed" from="UI/Control/MarginContainer/ShopButton/Button" to="UI" method="_on_button_pressed"]
