@@ -6,16 +6,16 @@ var unlocked = Global.unlocked
 
 func _ready() -> void:
 	anim.sprite_frames = type.anim
-	if unlocked["animation"]:
-		anim.play()
+	
+func _process(delta: float) -> void:
+	if unlocked["animation"] == true:
+			anim.play()
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
 		Global.coins += type.value
-	#if Input.is_action_just_pressed("terror_mode"):
-		#unlock_sound = true
-	#if unlock_sound == true:
+	if unlocked["sfx"] == true:
 		animation_player.play("pickup")
-	#else:
-		#queue_free()
+	else:
+		queue_free()
 	print(Global.coins)
