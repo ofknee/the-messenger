@@ -7,27 +7,31 @@ var bought : bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	disabled = true
 	setup()
+	Global.currency_changed.connect(payable)
 	
 func setup():
 	label.text = name
 	price_display.text = str(price)
+	payable(0)
+	
 
 func _on_pressed() -> void: 
-	if payable():
-		if bought == false:
-			Global.coins -= price
-			print("bought: ",thing)
-			modulate.a = 0.5
-			bought = true
-			Global.unlocked[thing] = true ##unlock
-		else:
-			print("alr bought: ",thing)
+	if payable(0):
+		Global.coins -= price
+		print("bought: ",thing)
+		#modulate.a = 0.5
+		Global.unlocked[thing] = true ##unlock
+		SignalBus.thing_bought.emit()
+		queue_free()
 	else:
 		print("ur broke lol")
 
-func payable() -> bool:
+func payable(_throwaway: int) -> bool:
 	if price <= Global.coins:
+		disabled = false
 		return true
 	else:
+		disabled = true
 		return false

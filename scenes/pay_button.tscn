@@ -1,16 +1,14 @@
 [gd_scene format=3 uid="uid://vpnklqxmedca"]
 
-[ext_resource type="Texture2D" uid="uid://cx2m72tws2xe8" path="res://assets/ui/hand-drawn-panel.png" id="1_vqpxj"]
+[ext_resource type="StyleBox" uid="uid://k5faxlcu54dl" path="res://resources/hand drawn button/normal.tres" id="1_s6mwr"]
 [ext_resource type="FontFile" uid="uid://dqqerscdm1bn6" path="res://assets/ui/fonts/minecraftia (1)/Minecraftia-Regular.ttf" id="2_5dapr"]
+[ext_resource type="StyleBox" uid="uid://dlp78gwqb7d03" path="res://resources/hand drawn button/pressed.tres" id="2_6akpq"]
 [ext_resource type="Script" uid="uid://ccdjeklhtnet7" path="res://scenes/pay_button.gd" id="2_cmjl1"]
 [ext_resource type="Texture2D" uid="uid://dvt6p0w7dnb63" path="res://assets/ui/coin.png" id="3_cmjl1"]
+[ext_resource type="StyleBox" uid="uid://cdwu8px5epne2" path="res://resources/hand drawn button/hover.tres" id="3_kx4ns"]
+[ext_resource type="StyleBox" uid="uid://4r5ocr26vd7m" path="res://resources/hand drawn button/disabled.tres" id="4_i218w"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_43hlm"]
-texture = ExtResource("1_vqpxj")
-texture_margin_left = 10.0
-texture_margin_top = 10.0
-texture_margin_right = 10.0
-texture_margin_bottom = 10.0
+[sub_resource type="Theme" id="Theme_vtaks"]
 
 [node name="PayButton" type="Button" unique_id=1763438241]
 self_modulate = Color(0.85814106, 0.85814106, 0.85814106, 1)
@@ -21,7 +19,12 @@ offset_right = -324.0
 offset_bottom = 50.0
 grow_horizontal = 2
 scale = Vector2(2, 2)
-theme_override_styles/normal = SubResource("StyleBoxTexture_43hlm")
+theme = SubResource("Theme_vtaks")
+theme_override_styles/normal = ExtResource("1_s6mwr")
+theme_override_styles/pressed = ExtResource("2_6akpq")
+theme_override_styles/hover = ExtResource("3_kx4ns")
+theme_override_styles/disabled = ExtResource("4_i218w")
+toggle_mode = true
 script = ExtResource("2_cmjl1")
 
 [node name="Label" type="RichTextLabel" parent="." unique_id=1114800284]

@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://c2pksn2gtmda8" path="res://assets/ui/Complete_UI_Book_Styles_Pack_Free_v1.0 2/01_TravelBookLite/Sprites/UI_TravelBook_BookCover01a.png" id="7_vtaks"]
 [ext_resource type="Texture2D" uid="uid://cro3plilao5kx" path="res://assets/environment/spike1.png" id="8_gee14"]
 [ext_resource type="PackedScene" uid="uid://vpnklqxmedca" path="res://scenes/pay_button.tscn" id="8_kvpfn"]
-[ext_resource type="PackedScene" uid="uid://cxho6q0gvx438" path="res://scenes/checkpoint.tscn" id="11_kvpfn"]
+[ext_resource type="Shader" uid="uid://can4mhgdccj31" path="res://resources/shaders/grayscale.gdshader" id="11_kvpfn"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_yqjtg"]
 blend_mode = 2
@@ -25,6 +25,9 @@ height = 85
 fill = 1
 fill_from = Vector2(0.50869566, 0.4978261)
 fill_to = Vector2(0.12173913, 0.76304346)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8o121"]
+shader = ExtResource("11_kvpfn")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iywne"]
 texture = ExtResource("4_p57ef")
@@ -80,6 +83,20 @@ texture = SubResource("GradientTexture2D_lbhrr")
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=1540499957]
 script = ExtResource("3_lbhrr")
+
+[node name="ShaderCanvas" type="CanvasLayer" parent="UI" unique_id=509785642]
+layer = 3
+
+[node name="Grayscale" type="ColorRect" parent="UI/ShaderCanvas" unique_id=1870708562]
+material = SubResource("ShaderMaterial_8o121")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
 
 [node name="Control" type="Control" parent="UI" unique_id=411163068]
 layout_mode = 3
@@ -167,7 +184,8 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_iywne")
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 offset_transform_enabled = true
-offset_transform_scale = Vector2(1.3, 1.5)
+offset_transform_scale = Vector2(1.5, 1.5)
+offset_transform_visual_only = false
 
 [node name="HBoxContainer" type="HBoxContainer" parent="UI/Control/MarginContainer/ShopButton" unique_id=209617335]
 layout_mode = 2
@@ -257,32 +275,31 @@ thing = "animation"
 
 [node name="SOUND EFFECTS" parent="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer" unique_id=895757374 instance=ExtResource("8_kvpfn")]
 layout_mode = 2
-price = 0
 thing = "sfx"
 
 [node name="PARTICLES" parent="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1964785691 instance=ExtResource("8_kvpfn")]
 layout_mode = 2
-price = 5
+price = 3
 thing = "particles"
 
 [node name="TERROR MODE" parent="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer" unique_id=2143273714 instance=ExtResource("8_kvpfn")]
 layout_mode = 2
-price = 5
+price = 2
 thing = "terrorMode"
 
 [node name="COLOR" parent="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer" unique_id=787159581 instance=ExtResource("8_kvpfn")]
 layout_mode = 2
-price = 7
+price = 3
 thing = "color"
 
 [node name="LEVEL2" parent="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1236946975 instance=ExtResource("8_kvpfn")]
 layout_mode = 2
-price = 5
+price = 8
 thing = "level2"
 
 [node name="LEVEL3" parent="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer" unique_id=50084127 instance=ExtResource("8_kvpfn")]
 layout_mode = 2
-price = 5
+price = 10
 thing = "level3"
 
 [node name="HSeparator" type="HSeparator" parent="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer" unique_id=870113532]
@@ -339,8 +356,6 @@ texture = ExtResource("8_gee14")
 [node name="startPos" type="Marker2D" parent="." unique_id=461214867]
 unique_name_in_owner = true
 position = Vector2(1, 50)
-
-[node name="Area2D" parent="." unique_id=213027284 instance=ExtResource("11_kvpfn")]
 
 [connection signal="pressed" from="UI/Control/MarginContainer/ShopButton/Button" to="UI" method="_on_button_pressed"]
 [connection signal="pressed" from="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer/LeaveShop" to="UI" method="_on_leave_shop_pressed"]
