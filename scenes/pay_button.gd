@@ -23,6 +23,7 @@ func _on_pressed() -> void:
 		print("bought: ",thing)
 		#modulate.a = 0.5
 		Global.unlocked[thing] = true ##unlock
+		SignalBus.thing_bought.emit()
 		queue_free()
 	else:
 		print("ur broke lol")
@@ -30,9 +31,7 @@ func _on_pressed() -> void:
 func payable(_throwaway: int) -> bool:
 	if price <= Global.coins:
 		disabled = false
-		print(thing,"undisabled")
 		return true
 	else:
 		disabled = true
-		print(thing,"disabled")
 		return false

@@ -7,6 +7,7 @@ var unlocked = Global.unlocked
 
 func _ready() -> void:
 	Global.currency_changed.connect(update_coins)
+	SignalBus.thing_bought.connect(kill_filter_check)
 	update_coins(Global.coins)
 	shop.hide()
 
@@ -21,7 +22,6 @@ func _on_leave_shop_pressed() -> void:
 	shop.hide()
 	
 func kill_filter_check():
-	print("kill filter called")
 	if unlocked["color"]:
 		grayscale.queue_free()
 		print('color deleted')
