@@ -275,32 +275,31 @@ thing = "animation"
 
 [node name="SOUND EFFECTS" parent="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer" unique_id=895757374 instance=ExtResource("8_kvpfn")]
 layout_mode = 2
-price = 0
 thing = "sfx"
 
 [node name="PARTICLES" parent="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1964785691 instance=ExtResource("8_kvpfn")]
 layout_mode = 2
-price = 5
+price = 3
 thing = "particles"
 
 [node name="TERROR MODE" parent="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer" unique_id=2143273714 instance=ExtResource("8_kvpfn")]
 layout_mode = 2
-price = 5
+price = 2
 thing = "terrorMode"
 
 [node name="COLOR" parent="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer" unique_id=787159581 instance=ExtResource("8_kvpfn")]
 layout_mode = 2
-price = 7
+price = 3
 thing = "color"
 
 [node name="LEVEL2" parent="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1236946975 instance=ExtResource("8_kvpfn")]
 layout_mode = 2
-price = 5
+price = 8
 thing = "level2"
 
 [node name="LEVEL3" parent="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer" unique_id=50084127 instance=ExtResource("8_kvpfn")]
 layout_mode = 2
-price = 5
+price = 10
 thing = "level3"
 
 [node name="HSeparator" type="HSeparator" parent="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer" unique_id=870113532]
