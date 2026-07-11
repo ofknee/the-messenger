@@ -1,5 +1,6 @@
 extends Node
 
+
 var unlocked = {
 	"animation" : false,
 	"sfx" : false,
@@ -7,6 +8,8 @@ var unlocked = {
 	"terrorMode" : false,
 }
 
+var high_check = 10000
+var high_checkpoint
 var dead = false
 
 signal currency_changed(new_currency: int)

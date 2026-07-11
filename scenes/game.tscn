@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://cro3plilao5kx" path="res://assets/environment/spike1.png" id="8_gee14"]
 [ext_resource type="PackedScene" uid="uid://vpnklqxmedca" path="res://scenes/pay_button.tscn" id="8_kvpfn"]
 [ext_resource type="Shader" uid="uid://can4mhgdccj31" path="res://resources/shaders/grayscale.gdshader" id="11_kvpfn"]
+[ext_resource type="PackedScene" uid="uid://cxho6q0gvx438" path="res://scenes/checkpoint.tscn" id="12_dinhu"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_yqjtg"]
 blend_mode = 2
@@ -356,6 +357,15 @@ texture = ExtResource("8_gee14")
 [node name="startPos" type="Marker2D" parent="." unique_id=461214867]
 unique_name_in_owner = true
 position = Vector2(1, 50)
+
+[node name="checkpoint1" parent="." unique_id=213027284 instance=ExtResource("12_dinhu")]
+position = Vector2(-66, -160)
+
+[node name="checkpoint2" parent="." unique_id=1666555603 instance=ExtResource("12_dinhu")]
+position = Vector2(-99, 39)
+
+[node name="checkpoint3" parent="." unique_id=2019689449 instance=ExtResource("12_dinhu")]
+position = Vector2(15, -516)
 
 [connection signal="pressed" from="UI/Control/MarginContainer/ShopButton/Button" to="UI" method="_on_button_pressed"]
 [connection signal="pressed" from="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer/LeaveShop" to="UI" method="_on_leave_shop_pressed"]
