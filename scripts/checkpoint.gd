@@ -26,4 +26,5 @@ func _is_higher(node: Area2D):
 			print(Global.high_checkpoint)
 		elif node.position.y > Global.high_check:
 			#playposition = Global.high_checkpoint.position
-			player.global_position = Global.high_checkpoint.global_position
+			player.global_position.x = Global.high_checkpoint.global_position.x
+			player.global_position.y = Global.high_checkpoint.global_position.y + 20
