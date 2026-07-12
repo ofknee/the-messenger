@@ -303,6 +303,11 @@ layout_mode = 2
 price = 10
 thing = "level3"
 
+[node name="CHECKPOINTS" parent="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer" unique_id=520283620 instance=ExtResource("8_kvpfn")]
+layout_mode = 2
+price = 0
+thing = "checkpoints"
+
 [node name="HSeparator" type="HSeparator" parent="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer" unique_id=870113532]
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(0, 20)

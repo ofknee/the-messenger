@@ -6,6 +6,7 @@ var unlocked = {
 	"sfx" : false,
 	"color" : false,
 	"terrorMode" : false,
+	"checkpoints" : false,
 }
 
 var high_check = 10000
