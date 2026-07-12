@@ -22,6 +22,6 @@ func _on_leave_shop_pressed() -> void:
 	shop.hide()
 	
 func kill_filter_check():
-	if unlocked["color"]:
+	if unlocked["color"] and grayscale:
 		grayscale.queue_free()
 		print('color deleted')

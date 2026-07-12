@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bao4fujosvh2v" path="res://scenes/player.tscn" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://c8iyeaju6mpb0" path="res://scenes/tile_map_layer.tscn" id="1_yqjtg"]
+[ext_resource type="Texture2D" uid="uid://hisbm26472k3" path="res://resources/flashlight.tres" id="3_dinhu"]
 [ext_resource type="Script" uid="uid://bugwb66xumgn8" path="res://scripts/ui.gd" id="3_lbhrr"]
 [ext_resource type="Texture2D" uid="uid://dvt6p0w7dnb63" path="res://assets/ui/coin.png" id="3_lnu2h"]
 [ext_resource type="Texture2D" uid="uid://cx2m72tws2xe8" path="res://assets/ui/hand-drawn-panel.png" id="4_p57ef"]
@@ -14,17 +15,6 @@
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_yqjtg"]
 blend_mode = 2
-
-[sub_resource type="Gradient" id="Gradient_yqjtg"]
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_lbhrr"]
-gradient = SubResource("Gradient_yqjtg")
-width = 85
-height = 85
-fill = 1
-fill_from = Vector2(0.50869566, 0.4978261)
-fill_to = Vector2(0.12173913, 0.76304346)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8o121"]
 shader = ExtResource("11_kvpfn")
@@ -79,7 +69,7 @@ scale = Vector2(0.86840963, 0.8676955)
 energy = 1.5
 shadow_enabled = true
 shadow_color = Color(0.1254902, 0.22352941, 0.8235294, 0.9647059)
-texture = SubResource("GradientTexture2D_lbhrr")
+texture = ExtResource("3_dinhu")
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=1540499957]
 script = ExtResource("3_lbhrr")
