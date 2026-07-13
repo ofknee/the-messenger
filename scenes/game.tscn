@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://vpnklqxmedca" path="res://scenes/pay_button.tscn" id="8_kvpfn"]
 [ext_resource type="Shader" uid="uid://can4mhgdccj31" path="res://resources/shaders/grayscale.gdshader" id="11_kvpfn"]
 [ext_resource type="PackedScene" uid="uid://cxho6q0gvx438" path="res://scenes/checkpoint.tscn" id="12_dinhu"]
+[ext_resource type="PackedScene" uid="uid://dai7e672v37ib" path="res://scenes/bg_music.tscn" id="15_ir15t"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_yqjtg"]
 blend_mode = 2
@@ -383,6 +384,8 @@ scale = Vector2(0.5, 0.5)
 [node name="checkpoint4" parent="checkpoints" unique_id=1434286468 instance=ExtResource("12_dinhu")]
 position = Vector2(86.5, -411.5)
 scale = Vector2(0.5, 0.5)
+
+[node name="bgMusic" parent="." unique_id=1807819626 instance=ExtResource("15_ir15t")]
 
 [connection signal="pressed" from="UI/Control/MarginContainer/ShopButton/Button" to="UI" method="_on_button_pressed"]
 [connection signal="pressed" from="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer/LeaveShop" to="UI" method="_on_leave_shop_pressed"]

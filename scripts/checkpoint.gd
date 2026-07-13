@@ -36,7 +36,7 @@ func _is_higher(node: Area2D):
 		elif node.position.y > Global.high_check:
 			#playposition = Global.high_checkpoint.position
 			
-				#await get_tree().create_timer(0.8).timeout
+			#await get_tree().create_timer(0.8).timeout
 			player.global_position.x = Global.high_checkpoint.global_position.x
 			player.global_position.y = Global.high_checkpoint.global_position.y + 20
 

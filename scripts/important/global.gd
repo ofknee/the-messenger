@@ -25,7 +25,7 @@ enum Level {
 	ADVANCED
 }
 var level = Level.BASIC
-
+#var bg_play = false
 
 var high_check = 10000
 var high_checkpoint
