@@ -3,8 +3,11 @@ extends Node
 var unlocked = {
 	"animation" : false,
 	"sfx" : false,
-	"color" : false,
+	"particles" : false,
+	"camera" : false,
 	"terrorMode" : false,
+	"color" : false,
+	"screenshake" : false,
 }
 
 var dead = false
