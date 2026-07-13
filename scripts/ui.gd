@@ -5,9 +5,11 @@ extends CanvasLayer
 @onready var grayscale = $ShaderCanvas/Grayscale
 @onready var camera = $"../Player/Camera2D"
 @onready var check_node = %checkpoints
+var bus_index = AudioServer.get_bus_index("Music")
 var unlocked = Global.unlocked
 
 func _ready() -> void:
+	AudioServer.set_bus_mute(bus_index, true)
 	Global.currency_changed.connect(update_coins)
 	SignalBus.thing_bought.connect(update_ui)
 	update_coins(Global.coins)
@@ -30,3 +32,5 @@ func update_ui():
 		print('color deleted')
 	if unlocked["checkpoints"] == true:
 		check_node.visible = true
+	if unlocked["sfx"] == true:
+		AudioServer.set_bus_mute(bus_index, false)
