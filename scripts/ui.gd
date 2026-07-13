@@ -3,6 +3,8 @@ extends CanvasLayer
 @onready var label = $Control/MarginContainer/Bank/HBoxContainer/MarginContainer2/RichTextLabel
 @onready var shop = $Control/MarginContainer/Shop
 @onready var grayscale = $ShaderCanvas/Grayscale
+@onready var camera = $"../Player/Camera2D"
+@onready var check_node = %checkpoints
 var unlocked = Global.unlocked
 
 func _ready() -> void:
@@ -25,3 +27,7 @@ func kill_filter_check():
 	if unlocked["color"] and is_instance_valid(grayscale) and not grayscale.is_queued_for_deletion():
 		grayscale.queue_free()
 		print('color deleted')
+		
+func checkpoint_check():
+	if unlocked["checkpoints"] == true:
+		check_node.visible = true

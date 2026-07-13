@@ -93,3 +93,4 @@ sprite_frames = SubResource("SpriteFrames_e28ry")
 animation = &"open"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="ready" from="." to="." method="_on_ready"]

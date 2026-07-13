@@ -363,14 +363,25 @@ texture = ExtResource("8_gee14")
 unique_name_in_owner = true
 position = Vector2(1, 50)
 
-[node name="checkpoint1" parent="." unique_id=213027284 instance=ExtResource("12_dinhu")]
-position = Vector2(-66, -213)
+[node name="checkpoints" type="Node2D" parent="." unique_id=97422869]
+unique_name_in_owner = true
+position = Vector2(-122, 0)
+scale = Vector2(2, 2)
 
-[node name="checkpoint2" parent="." unique_id=1666555603 instance=ExtResource("12_dinhu")]
-position = Vector2(-99, 11)
+[node name="checkpoint1" parent="checkpoints" unique_id=213027284 instance=ExtResource("12_dinhu")]
+visibility_layer = 128
+position = Vector2(28, -106.5)
+scale = Vector2(0.5, 0.5)
 
-[node name="checkpoint3" parent="." unique_id=2019689449 instance=ExtResource("12_dinhu")]
-position = Vector2(15, -566)
+[node name="checkpoint2" parent="checkpoints" unique_id=1666555603 instance=ExtResource("12_dinhu")]
+visibility_layer = 128
+position = Vector2(11.5, 5.5)
+scale = Vector2(0.5, 0.5)
+
+[node name="checkpoint3" parent="checkpoints" unique_id=2019689449 instance=ExtResource("12_dinhu")]
+visibility_layer = 128
+position = Vector2(68.5, -283)
+scale = Vector2(0.5, 0.5)
 
 [connection signal="pressed" from="UI/Control/MarginContainer/ShopButton/Button" to="UI" method="_on_button_pressed"]
 [connection signal="pressed" from="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer/LeaveShop" to="UI" method="_on_leave_shop_pressed"]

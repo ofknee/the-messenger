@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-
 const SPEED = 150.0
 const JUMP_VELOCITY = -370.0
 
@@ -14,6 +13,7 @@ var unlocked = Global.unlocked
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
+
 	if Global.dead == true:
 		global_position = start_pos.global_position
 		Global.dead = false
