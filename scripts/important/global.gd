@@ -8,7 +8,23 @@ var unlocked = {
 	"terrorMode" : false,
 	"color" : false,
 	"screenshake" : false,
+} if level == Level.BASIC else {
+	"animation" : false,
+	"sfx" : false,
+	"particles" : false,
+	"camera" : false,
+	"terrorMode" : false,
+	"color" : false,
+	"screenshake" : false,
 }
+
+enum Level {
+	BASIC,
+	SPIKES,
+	ADVANCED
+}
+var level = Level.BASIC
+
 
 var dead = false
 

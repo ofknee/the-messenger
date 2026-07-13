@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dd2igh7e7k5sn" path="res://assets/character/Kings and Pigs/Sprites/02-King Pig/Run (38x28).png" id="2_qhqgy"]
 [ext_resource type="Texture2D" uid="uid://bfk3n2f55083q" path="res://assets/character/Kings and Pigs/Sprites/02-King Pig/Jump (38x28).png" id="4_smehm"]
 [ext_resource type="Texture2D" uid="uid://6wm4e8fx6ncb" path="res://assets/character/Kings and Pigs/Sprites/02-King Pig/Ground (38x28).png" id="5_ur7pv"]
+[ext_resource type="Texture2D" uid="uid://hisbm26472k3" path="res://resources/flashlight.tres" id="8_smehm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a38lo"]
 atlas = ExtResource("1_tuyoq")
@@ -223,17 +224,6 @@ height = 20.0
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_fjrip"]
 blend_mode = 2
 
-[sub_resource type="Gradient" id="Gradient_yqjtg"]
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_smehm"]
-gradient = SubResource("Gradient_yqjtg")
-width = 85
-height = 85
-fill = 1
-fill_from = Vector2(0.50869566, 0.4978261)
-fill_to = Vector2(0.12173913, 0.76304346)
-
 [node name="Player" type="CharacterBody2D" unique_id=1850920723]
 script = ExtResource("1_fjrip")
 
@@ -253,4 +243,4 @@ scale = Vector2(0.86840963, 0.8676955)
 energy = 1.5
 shadow_enabled = true
 shadow_color = Color(0.1254902, 0.22352941, 0.8235294, 0.9647059)
-texture = SubResource("GradientTexture2D_smehm")
+texture = ExtResource("8_smehm")

@@ -12,9 +12,13 @@ func _ready() -> void:
 	Global.currency_changed.connect(payable)
 	
 func setup():
-	label.text = name
-	price_display.text = str(price)
-	payable(0)
+	if thing in Global.unlocked.keys():
+		label.text = name
+		price_display.text = str(price)
+		payable(0) #check if should be disabled or now
+		show()
+	else:
+		hide()
 	
 
 func _on_pressed() -> void: 
