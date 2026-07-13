@@ -225,6 +225,7 @@ height = 20.0
 blend_mode = 2
 
 [node name="Player" type="CharacterBody2D" unique_id=1850920723]
+z_index = 5
 script = ExtResource("1_fjrip")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1602055964]

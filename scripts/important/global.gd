@@ -1,5 +1,6 @@
 extends Node
 
+
 var unlocked = {
 	"animation" : false,
 	"sfx" : false,
@@ -8,15 +9,8 @@ var unlocked = {
 	"terrorMode" : false,
 	"color" : false,
 	"screenshake" : false,
-} if level == Level.BASIC else {
-	"animation" : false,
-	"sfx" : false,
-	"particles" : false,
-	"camera" : false,
-	"terrorMode" : false,
-	"color" : false,
-	"screenshake" : false,
-}
+	"checkpoints" : false,
+} 
 
 func setup_shop_unlocks():
 	if level == Level.BASIC:
@@ -33,6 +27,8 @@ enum Level {
 var level = Level.BASIC
 
 
+var high_check = 10000
+var high_checkpoint
 var dead = false
 
 signal currency_changed(new_currency: int)
