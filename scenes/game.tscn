@@ -380,5 +380,9 @@ visibility_layer = 128
 position = Vector2(68.5, -283)
 scale = Vector2(0.5, 0.5)
 
+[node name="checkpoint4" parent="checkpoints" unique_id=1434286468 instance=ExtResource("12_dinhu")]
+position = Vector2(86.5, -411.5)
+scale = Vector2(0.5, 0.5)
+
 [connection signal="pressed" from="UI/Control/MarginContainer/ShopButton/Button" to="UI" method="_on_button_pressed"]
 [connection signal="pressed" from="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer/LeaveShop" to="UI" method="_on_leave_shop_pressed"]
