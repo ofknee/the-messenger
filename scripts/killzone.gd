@@ -1,7 +1,7 @@
 extends Area2D
 
 @onready var timer = $Timer
-@onready var start_pos = %startPos
+@onready var start_pos = %startPos1
 #@onready
 
 func _on_body_entered(_body: Node2D) -> void:
