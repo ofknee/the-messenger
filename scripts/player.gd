@@ -6,7 +6,9 @@ const JUMP_VELOCITY = -370.0
 @onready var terrorMode = %terrorMode
 @onready var flashlight = $flashlight
 @onready var animated_sprite = $AnimatedSprite2D
-@onready var start_pos1 = %startPos1
+@export var start_pos0 : Marker2D
+@export var start_pos1 : Marker2D
+@export var start_pos2 : Marker2D
 var unlocked = Global.unlocked
 var was_on_floor := false
 var landing := false

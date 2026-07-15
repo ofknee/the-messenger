@@ -124,10 +124,12 @@ sprite_frames = SubResource("SpriteFrames_43hlm")
 animation = &"open"
 frame_progress = 0.72984666
 
-[node name="Player" parent="." unique_id=1850920723 instance=ExtResource("1_uwrxv")]
+[node name="Player" parent="." unique_id=1850920723 node_paths=PackedStringArray("start_pos0", "start_pos1") instance=ExtResource("1_uwrxv")]
 visibility_layer = 4
 position = Vector2(4.7683716e-07, 39.999992)
 scale = Vector2(1.6, 1.6)
+start_pos0 = NodePath("../Map/startPos0")
+start_pos1 = NodePath("../Map/startPos1")
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1474716870]
 zoom = Vector2(1.7, 1.7)
@@ -418,8 +420,10 @@ custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 theme_override_constants/separation = 11
 
-[node name="killzone" parent="." unique_id=128409644 instance=ExtResource("15_1kice")]
+[node name="killzone" parent="." unique_id=128409644 node_paths=PackedStringArray("start_pos0", "start_pos1") instance=ExtResource("15_1kice")]
 position = Vector2(119, -74.99999)
+start_pos0 = NodePath("../Map/startPos0")
+start_pos1 = NodePath("../Map/startPos1")
 
 [node name="checkpoints" type="Node2D" parent="." unique_id=97422869]
 unique_name_in_owner = true
