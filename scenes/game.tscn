@@ -113,7 +113,7 @@ unique_name_in_owner = true
 position = Vector2(0, 260)
 
 [node name="Door" type="Area2D" parent="Map" unique_id=146465089]
-position = Vector2(-932, -1243)
+position = Vector2(98, 901)
 script = ExtResource("2_rysoc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Door" unique_id=1396905371]
