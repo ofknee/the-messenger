@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://c0scgmfkl2567"]
+
+[ext_resource type="Script" uid="uid://c1adjr1r808pp" path="res://scripts/killzone.gd" id="1_7a7y0"]
+[ext_resource type="Texture2D" uid="uid://cro3plilao5kx" path="res://assets/environment/spike1.png" id="2_d2mqm"]
+
+[node name="killzone" type="Area2D" unique_id=128409644]
+rotation = -1.5764987
+script = ExtResource("1_7a7y0")
+
+[node name="Spike1" type="Sprite2D" parent="." unique_id=1986906324]
+position = Vector2(-0.008091498, 1.4206938)
+rotation = -0.0038721552
+scale = Vector2(2, 2)
+texture = ExtResource("2_d2mqm")
+
+[node name="Timer" type="Timer" parent="." unique_id=310668928]
+wait_time = 0.05
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="." unique_id=1337542858]
+position = Vector2(-0.030911017, 5.420625)
+polygon = PackedVector2Array(0.057023894, -9.999837, 11.9313755, 12.0682335, -12.0682335, 11.9313755)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

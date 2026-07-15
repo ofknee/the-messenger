@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b5cwj38u4pkfi" path="res://assets/character/Kings and Pigs/Sprites/01-King Human/Fall (78x58).png" id="3_fv5xq"]
 [ext_resource type="PackedScene" uid="uid://17hcye60hs7t" path="res://resources/coin/coin1.tscn" id="4_51i6s"]
 [ext_resource type="PackedScene" uid="uid://df3uu1104e8ns" path="res://resources/coin/coin2.tscn" id="5_dtrn4"]
+[ext_resource type="PackedScene" uid="uid://c0scgmfkl2567" path="res://scenes/spike.tscn" id="7_fv5xq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_okeva"]
 resource_name = "BigBlocks"
@@ -295,6 +296,7 @@ texture_region_size = Vector2i(32, 32)
 resource_name = "yo idk what to name this"
 scenes/3/scene = ExtResource("4_51i6s")
 scenes/4/scene = ExtResource("5_dtrn4")
+scenes/5/scene = ExtResource("7_fv5xq")
 
 [resource]
 tile_size = Vector2i(32, 32)
