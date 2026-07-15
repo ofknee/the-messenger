@@ -4,10 +4,12 @@ extends Area2D
 @onready var anim = $AnimatedSprite2D
 
 
+
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
 		print("door", level_to_unlock, "reached")
-		anim.play("open")
+		if anim.animation != "open":
+			anim.play("open")
 		if level_to_unlock == Global.Level.SPIKES:
 			unlocked["level2"] = false
 			unlocked["checkpoints"] = false

@@ -47,7 +47,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("3_ssvqc")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"default",
 "speed": 5.0
 }, {
@@ -67,7 +67,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_pl11u")
 }],
-"loop": 2,
+"loop": 0,
 "name": &"open",
 "speed": 10.0
 }]
@@ -121,8 +121,7 @@ shape = SubResource("RectangleShape2D_8o121")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Map/Door" unique_id=1633982339]
 sprite_frames = SubResource("SpriteFrames_43hlm")
-animation = &"open"
-frame_progress = 0.72984666
+autoplay = "default"
 
 [node name="Player" parent="." unique_id=1850920723 node_paths=PackedStringArray("start_pos0", "start_pos1") instance=ExtResource("1_uwrxv")]
 visibility_layer = 4
