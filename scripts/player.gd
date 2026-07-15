@@ -19,7 +19,7 @@ var landing := false
 func _ready() -> void:
 	animated_sprite.animation_finished.connect(_on_animation_finished)
 	Global.level += 1
-
+	global_position = start_pos0.global_position
 
 func _physics_process(delta: float) -> void:
 	if Global.dead == true:

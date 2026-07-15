@@ -106,11 +106,11 @@ position = Vector2(0, -210)
 
 [node name="startPos0" type="Marker2D" parent="Map" unique_id=461214867]
 unique_name_in_owner = true
-position = Vector2(-885, 267)
+position = Vector2(0, 2335)
 
 [node name="startPos1" type="Marker2D" parent="Map" unique_id=158524193]
 unique_name_in_owner = true
-position = Vector2(1, 260)
+position = Vector2(0, 260)
 
 [node name="Door" type="Area2D" parent="Map" unique_id=146465089]
 position = Vector2(-932, -1243)
