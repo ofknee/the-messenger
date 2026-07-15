@@ -26,9 +26,11 @@ func _physics_process(delta: float) -> void:
 	if Global.dead == true:
 		if unlocked["sfx"]:
 			death.play()
-		global_position = start_pos1.global_position
+		#global_position = start_pos1.global_position
 		Global.dead = false
-
+	if Input.is_action_just_pressed("quick_level"):
+		global_position = start_pos1.global_position
+		
 	if Input.is_action_just_pressed("terror_mode"):
 		if unlocked["terrorMode"] == false:
 			unlocked["terrorMode"] = true
