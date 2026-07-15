@@ -249,7 +249,6 @@ texture = ExtResource("3_fv5xq")
 margins = Vector2i(9, 15)
 texture_region_size = Vector2i(37, 29)
 0:0/0 = 0
-1:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0naqh"]
 resource_name = "MainDetails"
