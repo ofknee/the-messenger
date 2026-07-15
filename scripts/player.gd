@@ -20,6 +20,7 @@ func _ready() -> void:
 	animated_sprite.animation_finished.connect(_on_animation_finished)
 	global_position = start_pos0.global_position
 	SignalBus.level_up.connect(level_up)
+	SignalBus.thing_bought.connect(level_up_precursor)
 
 func _physics_process(delta: float) -> void:
 	if Global.dead == true:
@@ -95,6 +96,13 @@ func _on_animation_finished() -> void:
 	if animated_sprite.animation == "land":
 		landing = false
 		
+		
+func level_up_precursor() -> void:
+	if unlocked["level3"]:
+		level_up(2)
+	elif unlocked["level2"]:
+		level_up(1)
+	
 func level_up(new_level : int) -> void:
 	if new_level == Global.Level.SPIKES:
 		global_position = start_pos1.global_position
