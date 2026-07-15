@@ -8,5 +8,6 @@
 type = ExtResource("2_fd32l")
 
 [node name="AnimatedSprite2D" parent="." index="1" unique_id=1138561123]
+scale = Vector2(1.2, 1.2)
 sprite_frames = ExtResource("3_fd32l")
 animation = &"default"
