@@ -6,9 +6,11 @@ const JUMP_VELOCITY = -370.0
 @onready var terrorMode = %terrorMode
 @onready var flashlight = $flashlight
 @onready var animated_sprite = $AnimatedSprite2D
-@onready var start_pos = %startPos
 @onready var land = $land
 @onready var death = $death
+@export var start_pos0 : Marker2D
+@export var start_pos1 : Marker2D
+@export var start_pos2 : Marker2D
 var unlocked = Global.unlocked
 var was_on_floor := false
 var landing := false
@@ -23,7 +25,7 @@ func _physics_process(delta: float) -> void:
 	if Global.dead == true:
 		if unlocked["sfx"]:
 			death.play()
-		global_position = start_pos.global_position
+		global_position = start_pos1.global_position
 		Global.dead = false
 
 	if Input.is_action_just_pressed("terror_mode"):

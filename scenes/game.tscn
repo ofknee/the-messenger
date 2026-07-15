@@ -2,19 +2,75 @@
 
 [ext_resource type="PackedScene" uid="uid://bao4fujosvh2v" path="res://scenes/player.tscn" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://c8iyeaju6mpb0" path="res://scenes/tile_map_layer.tscn" id="1_yqjtg"]
+[ext_resource type="Script" uid="uid://btgmetoepu1rk" path="res://scenes/door.gd" id="2_rysoc"]
 [ext_resource type="Texture2D" uid="uid://hisbm26472k3" path="res://resources/flashlight.tres" id="3_dinhu"]
 [ext_resource type="Script" uid="uid://dp3t0hy5sfgm7" path="res://scenes/camera_2d.gd" id="3_kvuet"]
 [ext_resource type="Script" uid="uid://bugwb66xumgn8" path="res://scripts/ui.gd" id="3_lbhrr"]
 [ext_resource type="Texture2D" uid="uid://dvt6p0w7dnb63" path="res://assets/ui/coin.png" id="3_lnu2h"]
+[ext_resource type="Texture2D" uid="uid://b3gg18uuj1o2d" path="res://assets/environment/Kings and Pigs/Sprites/11-Door/Idle.png" id="3_ssvqc"]
+[ext_resource type="Texture2D" uid="uid://c8v15khvb4vg4" path="res://assets/environment/Kings and Pigs/Sprites/11-Door/Opening (46x56).png" id="4_264po"]
 [ext_resource type="Texture2D" uid="uid://cx2m72tws2xe8" path="res://assets/ui/hand-drawn-panel.png" id="4_p57ef"]
 [ext_resource type="FontFile" uid="uid://dqqerscdm1bn6" path="res://assets/ui/fonts/minecraftia (1)/Minecraftia-Regular.ttf" id="5_u5sy4"]
-[ext_resource type="PackedScene" uid="uid://bstmedp222n3g" path="res://scenes/killzone.tscn" id="7_u5sy4"]
 [ext_resource type="Texture2D" uid="uid://c2pksn2gtmda8" path="res://assets/ui/Complete_UI_Book_Styles_Pack_Free_v1.0 2/01_TravelBookLite/Sprites/UI_TravelBook_BookCover01a.png" id="7_vtaks"]
-[ext_resource type="Texture2D" uid="uid://cro3plilao5kx" path="res://assets/environment/spike1.png" id="8_gee14"]
 [ext_resource type="PackedScene" uid="uid://vpnklqxmedca" path="res://scenes/pay_button.tscn" id="8_kvpfn"]
 [ext_resource type="Shader" uid="uid://can4mhgdccj31" path="res://resources/shaders/grayscale.gdshader" id="11_kvpfn"]
 [ext_resource type="PackedScene" uid="uid://cxho6q0gvx438" path="res://scenes/checkpoint.tscn" id="12_dinhu"]
+[ext_resource type="PackedScene" uid="uid://c0scgmfkl2567" path="res://scenes/spike.tscn" id="15_1kice"]
 [ext_resource type="PackedScene" uid="uid://dai7e672v37ib" path="res://scenes/bg_music.tscn" id="15_ir15t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8o121"]
+size = Vector2(46, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5newe"]
+atlas = ExtResource("4_264po")
+region = Rect2(0, 0, 46, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_37s47"]
+atlas = ExtResource("4_264po")
+region = Rect2(46, 0, 46, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bt5mj"]
+atlas = ExtResource("4_264po")
+region = Rect2(92, 0, 46, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e1j6l"]
+atlas = ExtResource("4_264po")
+region = Rect2(138, 0, 46, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pl11u"]
+atlas = ExtResource("4_264po")
+region = Rect2(184, 0, 46, 56)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_43hlm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ssvqc")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5newe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_37s47")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bt5mj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e1j6l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pl11u")
+}],
+"loop": 1,
+"name": &"open",
+"speed": 10.0
+}]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_yqjtg"]
 blend_mode = 2
@@ -36,8 +92,6 @@ texture_margin_top = 10.0
 texture_margin_right = 10.0
 texture_margin_bottom = 10.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_l57lt"]
-
 [node name="Game" type="Node2D" unique_id=630479902]
 
 [node name="terrorMode" type="CanvasModulate" parent="." unique_id=465571593]
@@ -50,10 +104,32 @@ color = Color(0.28235295, 0, 0.03137255, 1)
 [node name="Map" parent="." unique_id=1775520249 instance=ExtResource("1_yqjtg")]
 position = Vector2(0, -210)
 
-[node name="Player" parent="." unique_id=1850920723 instance=ExtResource("1_uwrxv")]
+[node name="startPos0" type="Marker2D" parent="Map" unique_id=461214867]
+unique_name_in_owner = true
+position = Vector2(-885, 267)
+
+[node name="startPos1" type="Marker2D" parent="Map" unique_id=158524193]
+unique_name_in_owner = true
+position = Vector2(1, 260)
+
+[node name="Door" type="Area2D" parent="Map" unique_id=146465089]
+position = Vector2(-932, -1243)
+script = ExtResource("2_rysoc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Door" unique_id=1396905371]
+shape = SubResource("RectangleShape2D_8o121")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Map/Door" unique_id=1633982339]
+sprite_frames = SubResource("SpriteFrames_43hlm")
+animation = &"open"
+frame_progress = 0.72984666
+
+[node name="Player" parent="." unique_id=1850920723 node_paths=PackedStringArray("start_pos0", "start_pos1") instance=ExtResource("1_uwrxv")]
 visibility_layer = 4
 position = Vector2(4.7683716e-07, 39.999992)
 scale = Vector2(1.6, 1.6)
+start_pos0 = NodePath("../Map/startPos0")
+start_pos1 = NodePath("../Map/startPos1")
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1474716870]
 zoom = Vector2(1.7, 1.7)
@@ -344,22 +420,10 @@ custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 theme_override_constants/separation = 11
 
-[node name="killzone" parent="." unique_id=1339280733 instance=ExtResource("7_u5sy4")]
+[node name="killzone" parent="." unique_id=128409644 node_paths=PackedStringArray("start_pos0", "start_pos1") instance=ExtResource("15_1kice")]
 position = Vector2(119, -74.99999)
-rotation = -1.5764987
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone" unique_id=17142866]
-shape = SubResource("RectangleShape2D_l57lt")
-
-[node name="Spike1" type="Sprite2D" parent="killzone" unique_id=1565781562]
-position = Vector2(0.022819519, -3.9999313)
-rotation = -0.0038721554
-scale = Vector2(1.7199658, 1.7199658)
-texture = ExtResource("8_gee14")
-
-[node name="startPos" type="Marker2D" parent="." unique_id=461214867]
-unique_name_in_owner = true
-position = Vector2(1, 50)
+start_pos0 = NodePath("../Map/startPos0")
+start_pos1 = NodePath("../Map/startPos1")
 
 [node name="checkpoints" type="Node2D" parent="." unique_id=97422869]
 unique_name_in_owner = true
@@ -387,5 +451,6 @@ scale = Vector2(0.5, 0.5)
 
 [node name="bgMusic" parent="." unique_id=1807819626 instance=ExtResource("15_ir15t")]
 
+[connection signal="body_entered" from="Map/Door" to="Map/Door" method="_on_body_entered"]
 [connection signal="pressed" from="UI/Control/MarginContainer/ShopButton/Button" to="UI" method="_on_button_pressed"]
 [connection signal="pressed" from="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer/LeaveShop" to="UI" method="_on_leave_shop_pressed"]

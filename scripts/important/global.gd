@@ -10,13 +10,6 @@ var unlocked = {
 	"checkpoints" : false
 } 
 
-func setup_shop_unlocks():
-	if level == Level.BASIC:
-		unlocked["level2"] = false
-	elif level == Level.SPIKES:
-		unlocked["checkpoints"]
-		unlocked["level3"] = false
-
 enum Level {
 	BASIC,
 	SPIKES,
