@@ -14,10 +14,11 @@ var unlocked = Global.unlocked
 
 
 func _on_body_entered(body: Node2D) -> void:
-	if unlocked["checkpoints"] == true:
-		print(self.position.y, self)
-		_is_higher(self)
-			
+	if Global.level == 1:
+		if unlocked["checkpoints"] == true:
+			print(self.position.y, self)
+			_is_higher(self)
+				
 		
 	
 	#print(Global.high_check)
