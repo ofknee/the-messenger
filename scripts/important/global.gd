@@ -36,3 +36,5 @@ var coins: int = 0: ##starting money
 	set(val):
 		coins = val
 		currency_changed.emit(val)
+		
+		
