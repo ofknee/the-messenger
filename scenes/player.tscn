@@ -173,7 +173,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_oprun")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"idle",
 "speed": 12.0
 }, {
@@ -189,7 +189,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_pf23h")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"land",
 "speed": 5.0
 }, {
@@ -230,7 +230,7 @@ script = ExtResource("1_fjrip")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1602055964]
 sprite_frames = SubResource("SpriteFrames_8o121")
-animation = &"idle"
+animation = &"land"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=537230496]
 position = Vector2(1, 3)

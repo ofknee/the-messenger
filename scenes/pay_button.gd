@@ -19,7 +19,7 @@ func setup():
 		show()
 	else:
 		hide()
-	
+		
 
 func _on_pressed() -> void: 
 	if payable(0):

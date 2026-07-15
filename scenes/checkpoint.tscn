@@ -26,22 +26,6 @@ region = Rect2(96, 0, 32, 32)
 atlas = ExtResource("2_ywqth")
 region = Rect2(128, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_tl56q"]
-atlas = ExtResource("2_ywqth")
-region = Rect2(96, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ok2sx"]
-atlas = ExtResource("2_ywqth")
-region = Rect2(64, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_j0vas"]
-atlas = ExtResource("2_ywqth")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fndcu"]
-atlas = ExtResource("2_ywqth")
-region = Rect2(0, 0, 32, 32)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_e28ry"]
 animations = [{
 "frames": [{
@@ -59,22 +43,10 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_vc08m")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_tl56q")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ok2sx")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_j0vas")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fndcu")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"open",
-"speed": 5.0
+"speed": 10.0
 }]
 
 [node name="Area2D" type="Area2D" unique_id=213027284]
