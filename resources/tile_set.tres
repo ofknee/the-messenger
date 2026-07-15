@@ -1,7 +1,9 @@
 [gd_resource type="TileSet" format=3 uid="uid://bmd4o5mpmielb"]
 
 [ext_resource type="Texture2D" uid="uid://b3kqdss6qyo55" path="res://assets/environment/Kings and Pigs/Sprites/14-TileSets/Terrain (32x32).png" id="1_wvt7e"]
+[ext_resource type="Texture2D" uid="uid://cxk26fkocx5qi" path="res://assets/environment/Kings and Pigs/Sprites/08-Box/Idle.png" id="2_dtrn4"]
 [ext_resource type="Texture2D" uid="uid://cqtig7k460a5h" path="res://assets/environment/Kings and Pigs/Sprites/14-TileSets/Decorations (32x32).png" id="2_k764t"]
+[ext_resource type="Texture2D" uid="uid://b5cwj38u4pkfi" path="res://assets/character/Kings and Pigs/Sprites/01-King Human/Fall (78x58).png" id="3_fv5xq"]
 [ext_resource type="PackedScene" uid="uid://17hcye60hs7t" path="res://resources/coin/coin1.tscn" id="4_51i6s"]
 [ext_resource type="PackedScene" uid="uid://df3uu1104e8ns" path="res://resources/coin/coin2.tscn" id="5_dtrn4"]
 
@@ -235,6 +237,17 @@ texture_region_size = Vector2i(32, 32)
 8:5/0 = 0
 8:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hqfjb"]
+texture = ExtResource("2_dtrn4")
+texture_region_size = Vector2i(32, 32)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_he30u"]
+texture = ExtResource("3_fv5xq")
+margins = Vector2i(9, 15)
+texture_region_size = Vector2i(37, 29)
+0:0/0 = 0
+1:0/0 = 0
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0naqh"]
 resource_name = "MainDetails"
 texture = ExtResource("2_k764t")
@@ -294,3 +307,5 @@ terrain_set_0/terrain_1/color = Color(0.77752095, 1.540184e-05, 0.5425594, 1)
 sources/0 = SubResource("TileSetAtlasSource_okeva")
 sources/3 = SubResource("TileSetAtlasSource_0naqh")
 sources/5 = SubResource("TileSetScenesCollectionSource_xd6c0")
+sources/1 = SubResource("TileSetAtlasSource_hqfjb")
+sources/2 = SubResource("TileSetAtlasSource_he30u")

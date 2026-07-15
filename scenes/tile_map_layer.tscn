@@ -19,7 +19,7 @@ tile_set = ExtResource("1_wipo8")
 [node name="TopDecoration" type="TileMapLayer" parent="." unique_id=793976359]
 tile_set = ExtResource("1_wipo8")
 
-[connection signal="body_entered" from="Main/Coin" to="Main/Coin" method="_on_body_entered"]
-[connection signal="body_entered" from="Main/@Area2D@32591" to="Main/@Area2D@32591" method="_on_body_entered"]
-[connection signal="body_entered" from="Main/@Area2D@32592" to="Main/@Area2D@32592" method="_on_body_entered"]
-[connection signal="body_entered" from="Main/@Area2D@32593" to="Main/@Area2D@32593" method="_on_body_entered"]
+[connection signal="body_entered" from="Main/@Area2D@97851" to="Main/@Area2D@97851" method="_on_body_entered"]
+[connection signal="body_entered" from="Main/@Area2D@97852" to="Main/@Area2D@97852" method="_on_body_entered"]
+[connection signal="body_entered" from="Main/@Area2D@97853" to="Main/@Area2D@97853" method="_on_body_entered"]
+[connection signal="body_entered" from="Main/@Area2D@97854" to="Main/@Area2D@97854" method="_on_body_entered"]
