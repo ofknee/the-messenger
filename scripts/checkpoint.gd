@@ -12,13 +12,15 @@ extends Area2D
 #on checkpoint exited, set highest y to checkpoint pos
 var change_save
 var unlocked = Global.unlocked
+var saved_doors : Array
 
 
 
 func _on_body_entered(body: Node2D) -> void:
-	if Global.level == 1:
+	if Global.level >= 1:
 		if unlocked["checkpoints"] == true:
 			print(self.position.y, self)
+			_add_to_door_list(self)
 			_is_higher(self)
 				
 		
@@ -32,12 +34,10 @@ func _is_higher(node: Area2D):
 			Global.high_checkpoint = node
 			if unlocked["animation"] == true:
 				animated_sprite.play("open")
+				
 			if unlocked["sfx"]:
 				open.play()
-			#print('high_check: ') 
-			#print(Global.high_check)
-			#print('high_checkpoint: ') 
-			#print(Global.high_checkpoint)
+		
 		elif node.position.y > Global.high_check:
 			#playposition = Global.high_checkpoint.position
 			if unlocked["sfx"]:
@@ -46,6 +46,15 @@ func _is_higher(node: Area2D):
 			player.global_position.x = Global.high_checkpoint.global_position.x
 			player.global_position.y = Global.high_checkpoint.global_position.y + 20
 
+func _add_to_door_list(body):
+	saved_doors.append(body)
 
 func _ready() -> void:
+	SignalBus.thing_bought.connect(open_doors)
 	check_node.visible = false
+
+func open_doors():
+	if unlocked["animation"]:
+		for item in saved_doors:
+			animated_sprite.play("open")
+			saved_doors.erase(item)
