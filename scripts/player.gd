@@ -98,11 +98,12 @@ func _on_animation_finished() -> void:
 		
 		
 func level_up_precursor() -> void:
-	if unlocked["level3"]:
+	if unlocked.get("level3"):
 		level_up(2)
-	elif unlocked["level2"]:
+		
+	elif unlocked.get("level2"):
 		level_up(1)
-	
+		Global.unlocked["checkpoints"] = true
 func level_up(new_level : int) -> void:
 	if new_level == Global.Level.SPIKES:
 		global_position = start_pos1.global_position
