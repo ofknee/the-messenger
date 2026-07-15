@@ -4,12 +4,9 @@ extends Node
 var unlocked = {
 	"animation" : false,
 	"sfx" : false,
-	"particles" : false,
 	"camera" : false,
 	"terrorMode" : false,
 	"color" : false,
-	"screenshake" : false,
-	"checkpoints" : false,
 } 
 
 func setup_shop_unlocks():
