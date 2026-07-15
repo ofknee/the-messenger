@@ -7,6 +7,8 @@ extends Area2D
 @onready var player = $"../../Player"
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var check_node = %checkpoints
+@onready var tp = $teleport
+@onready var open = $door_open
 #on checkpoint exited, set highest y to checkpoint pos
 var change_save
 var unlocked = Global.unlocked
@@ -30,13 +32,16 @@ func _is_higher(node: Area2D):
 			Global.high_checkpoint = node
 			if unlocked["animation"] == true:
 				animated_sprite.play("open")
+			if unlocked["sfx"]:
+				open.play()
 			#print('high_check: ') 
 			#print(Global.high_check)
 			#print('high_checkpoint: ') 
 			#print(Global.high_checkpoint)
 		elif node.position.y > Global.high_check:
 			#playposition = Global.high_checkpoint.position
-			
+			if unlocked["sfx"]:
+				tp.play(0.6)
 			#await get_tree().create_timer(0.8).timeout
 			player.global_position.x = Global.high_checkpoint.global_position.x
 			player.global_position.y = Global.high_checkpoint.global_position.y + 20

@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://cxho6q0gvx438"]
 
 [ext_resource type="Script" uid="uid://ddxlmgj407xbf" path="res://scripts/checkpoint.gd" id="1_yyywg"]
+[ext_resource type="AudioStream" uid="uid://c03hpj56g2cwa" path="res://assets/sounds/teleport.mp3" id="2_vsimk"]
 [ext_resource type="Texture2D" uid="uid://bqq5qo7ifsgfh" path="res://assets/environment/door.png" id="2_ywqth"]
+[ext_resource type="AudioStream" uid="uid://b1rh6yg63mepg" path="res://assets/sounds/door_sound.mp3" id="4_yqsag"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l57lt"]
 size = Vector2(20, 35)
@@ -58,11 +60,20 @@ script = ExtResource("1_yyywg")
 position = Vector2(0, 51)
 shape = SubResource("RectangleShape2D_l57lt")
 
+[node name="teleport" type="AudioStreamPlayer2D" parent="." unique_id=1383028003]
+position = Vector2(0, 49)
+scale = Vector2(1.64, 1.64)
+stream = ExtResource("2_vsimk")
+bus = &"SFX"
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=861653566]
 position = Vector2(0, 49)
 scale = Vector2(1.64, 1.64)
 sprite_frames = SubResource("SpriteFrames_e28ry")
 animation = &"open"
+
+[node name="door_open" type="AudioStreamPlayer2D" parent="." unique_id=1110478763]
+stream = ExtResource("4_yqsag")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="ready" from="." to="." method="_on_ready"]

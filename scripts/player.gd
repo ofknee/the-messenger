@@ -7,6 +7,8 @@ const JUMP_VELOCITY = -370.0
 @onready var flashlight = $flashlight
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var start_pos = %startPos
+@onready var land = $land
+@onready var death = $death
 var unlocked = Global.unlocked
 var was_on_floor := false
 var landing := false
@@ -14,10 +16,13 @@ var landing := false
 
 func _ready() -> void:
 	animated_sprite.animation_finished.connect(_on_animation_finished)
+	Global.level += 1
 
 
 func _physics_process(delta: float) -> void:
 	if Global.dead == true:
+		if unlocked["sfx"]:
+			death.play()
 		global_position = start_pos.global_position
 		Global.dead = false
 
@@ -70,6 +75,8 @@ func _physics_process(delta: float) -> void:
 		if unlocked["animation"]:
 			landing = true
 			animated_sprite.play("land")
+		if unlocked["sfx"]:
+			land.play()
 
 	if is_on_floor() and not landing:
 		if direction:

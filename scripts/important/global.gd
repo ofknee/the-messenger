@@ -7,6 +7,7 @@ var unlocked = {
 	"camera" : false,
 	"terrorMode" : false,
 	"color" : false,
+	"checkpoints" : false
 } 
 
 func setup_shop_unlocks():
