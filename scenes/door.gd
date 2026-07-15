@@ -10,14 +10,13 @@ func _on_body_entered(body: Node2D) -> void:
 		anim.play("open")
 		if level_to_unlock == Global.Level.SPIKES:
 			unlocked["level2"] = false
+			unlocked["checkpoints"] = false
 		elif level_to_unlock == Global.Level.ADVANCED:
 			unlocked["level3"] = false
-		SignalBus.level_up.emit(level_to_unlock)
 
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("dead"):
 		print("door", level_to_unlock, "reached")
 		if level_to_unlock == Global.Level.SPIKES:
-			unlocked["level2"] = false
-		elif level_to_unlock == Global.Level.ADVANCED:
 			unlocked["level3"] = false
+		SignalBus.level_up.emit(Global.Level.SPIKES)

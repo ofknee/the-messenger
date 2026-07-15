@@ -7,7 +7,6 @@ var unlocked = {
 	"camera" : false,
 	"terrorMode" : false,
 	"color" : false,
-	"checkpoints" : false
 } 
 
 enum Level {
