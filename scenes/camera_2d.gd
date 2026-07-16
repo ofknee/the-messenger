@@ -10,7 +10,7 @@ func _ready() -> void:
 	zoom = Vector2(2,2)
 
 func enable_nice_camera(): # yes smoothing is better
-	if unlocked["camera"]:
+	if unlocked.get("camera"):
 		position_smoothing_enabled = true
 		drag_horizontal_enabled = true
 		drag_vertical_offset = -0.66
