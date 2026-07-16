@@ -47,7 +47,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("3_ssvqc")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"default",
 "speed": 5.0
 }, {
@@ -67,7 +67,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_pl11u")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"open",
 "speed": 10.0
 }]
@@ -113,16 +113,16 @@ unique_name_in_owner = true
 position = Vector2(0, 260)
 
 [node name="Door" type="Area2D" parent="Map" unique_id=146465089]
-position = Vector2(98, 901)
+position = Vector2(56, 2181)
 script = ExtResource("2_rysoc")
+level_to_unlock = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Door" unique_id=1396905371]
 shape = SubResource("RectangleShape2D_8o121")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Map/Door" unique_id=1633982339]
 sprite_frames = SubResource("SpriteFrames_43hlm")
-animation = &"open"
-frame_progress = 0.72984666
+autoplay = "default"
 
 [node name="Player" parent="." unique_id=1850920723 node_paths=PackedStringArray("start_pos0", "start_pos1") instance=ExtResource("1_uwrxv")]
 visibility_layer = 4
@@ -378,6 +378,7 @@ price = 10
 thing = "level3"
 
 [node name="CHECKPOINTS" parent="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer" unique_id=520283620 instance=ExtResource("8_kvpfn")]
+visible = false
 layout_mode = 2
 price = 0
 thing = "checkpoints"
