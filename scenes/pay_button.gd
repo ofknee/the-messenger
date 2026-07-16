@@ -14,7 +14,7 @@ func _ready() -> void:
 	SignalBus.level_up.connect(setup_redirect)
 	
 func setup_redirect ( _throwaway : int ) :
-	print("i got called!")
+	print(Global.unlocked)
 	setup()
 	
 func setup():

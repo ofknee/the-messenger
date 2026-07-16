@@ -100,10 +100,12 @@ func _on_animation_finished() -> void:
 		
 func level_up_precursor() -> void:
 	if unlocked.get("level2"):
-		unlocked = {
-			"checkpoint" : false,
+		Global.unlocked = {
+			"checkpoints" : false,
 			"terrorMode" : false,
 		}
+		unlocked = Global.unlocked
+		print("unlocked" , unlocked)
 		level_up(1)
 		SignalBus.level_up.emit(1)
 		
