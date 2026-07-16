@@ -433,7 +433,7 @@ scale = Vector2(2, 2)
 
 [node name="checkpoint1" parent="checkpoints" unique_id=213027284 instance=ExtResource("12_dinhu")]
 visibility_layer = 128
-position = Vector2(28, -106.5)
+position = Vector2(21, -139)
 scale = Vector2(0.5, 0.5)
 
 [node name="checkpoint2" parent="checkpoints" unique_id=1666555603 instance=ExtResource("12_dinhu")]
@@ -443,11 +443,15 @@ scale = Vector2(0.5, 0.5)
 
 [node name="checkpoint3" parent="checkpoints" unique_id=2019689449 instance=ExtResource("12_dinhu")]
 visibility_layer = 128
-position = Vector2(68.5, -283)
+position = Vector2(101, -347.5)
 scale = Vector2(0.5, 0.5)
 
 [node name="checkpoint4" parent="checkpoints" unique_id=1434286468 instance=ExtResource("12_dinhu")]
-position = Vector2(86.5, -411.5)
+position = Vector2(5.5, -475.5)
+scale = Vector2(0.5, 0.5)
+
+[node name="checkpoint5" parent="checkpoints" unique_id=1600909978 instance=ExtResource("12_dinhu")]
+position = Vector2(53.5, -700)
 scale = Vector2(0.5, 0.5)
 
 [node name="bgMusic" parent="." unique_id=1807819626 instance=ExtResource("15_ir15t")]
