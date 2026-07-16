@@ -452,6 +452,19 @@ scale = Vector2(0.5, 0.5)
 
 [node name="bgMusic" parent="." unique_id=1807819626 instance=ExtResource("15_ir15t")]
 
+[node name="Door" type="Area2D" parent="." unique_id=699275613]
+position = Vector2(-27, -1614)
+script = ExtResource("2_rysoc")
+level_to_unlock = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door" unique_id=1487638596]
+shape = SubResource("RectangleShape2D_8o121")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Door" unique_id=386165661]
+sprite_frames = SubResource("SpriteFrames_43hlm")
+autoplay = "default"
+
 [connection signal="body_entered" from="Map/Door" to="Map/Door" method="_on_body_entered"]
 [connection signal="pressed" from="UI/Control/MarginContainer/ShopButton/Button" to="UI" method="_on_button_pressed"]
 [connection signal="pressed" from="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer/LeaveShop" to="UI" method="_on_leave_shop_pressed"]
+[connection signal="body_entered" from="Door" to="Door" method="_on_body_entered"]
