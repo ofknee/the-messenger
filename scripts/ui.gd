@@ -31,7 +31,7 @@ func update_ui():
 		grayscale.queue_free()
 		print('color deleted')
 	if Global.level == 1:
-		if unlocked["checkpoints"] == true:
+		if unlocked.get("checkpoints") == true:
 			check_node.visible = true
 	if unlocked.get("sfx") == true:
 		AudioServer.set_bus_mute(bus_index, false)

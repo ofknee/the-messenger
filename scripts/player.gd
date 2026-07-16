@@ -24,7 +24,7 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	if Global.dead == true:
-		if unlocked["sfx"]:
+		if unlocked.get("sfx"):
 			death.play()
 		global_position = start_pos1.global_position
 		Global.dead = false
@@ -32,14 +32,14 @@ func _physics_process(delta: float) -> void:
 		global_position = start_pos1.global_position
 		
 	if Input.is_action_just_pressed("terror_mode"):
-		if unlocked["terrorMode"] == false:
+		if unlocked.get("terrorMode") == false:
 			unlocked["terrorMode"] = true
 		else:
 			unlocked["terrorMode"] = false
 			flashlight.visible = false
 			terrorMode.visible = false
 			
-	if unlocked["terrorMode"]:
+	if unlocked.get("terrorMode"):
 		flashlight.visible = true
 		terrorMode.visible = true
 		
@@ -99,20 +99,18 @@ func _on_animation_finished() -> void:
 		
 		
 func level_up_precursor() -> void:
-	if unlocked.get("level3"):
-		level_up(2)
-		
-	elif unlocked.get("level2"):
-		level_up(1)
-		Global.unlocked = {
+	if unlocked.get("level2"):
+		unlocked = {
 			"checkpoint" : false,
 			"terrorMode" : false,
 		}
+		level_up(1)
+		SignalBus.level_up.emit(1)
+		
 
 		
 func level_up(new_level : int) -> void:
 	if new_level == Global.Level.SPIKES:
 		global_position = start_pos1.global_position
-		
 	else:
 		global_position = start_pos1.global_position

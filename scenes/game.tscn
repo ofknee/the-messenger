@@ -373,12 +373,12 @@ price = 8
 thing = "level2"
 
 [node name="LEVEL3" parent="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer" unique_id=50084127 instance=ExtResource("8_kvpfn")]
+visible = false
 layout_mode = 2
 price = 10
 thing = "level3"
 
 [node name="CHECKPOINTS" parent="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer" unique_id=520283620 instance=ExtResource("8_kvpfn")]
-visible = false
 layout_mode = 2
 price = 0
 thing = "checkpoints"
