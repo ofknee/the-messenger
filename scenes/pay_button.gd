@@ -11,7 +11,6 @@ func _ready() -> void:
 	setup()
 	Global.currency_changed.connect(payable)
 	SignalBus.door_entered.connect(setup)
-	SignalBus.level_up.connect(setup)
 	
 func setup():
 	if thing in Global.unlocked.keys():

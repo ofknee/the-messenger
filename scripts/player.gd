@@ -26,7 +26,7 @@ func _physics_process(delta: float) -> void:
 	if Global.dead == true:
 		if unlocked["sfx"]:
 			death.play()
-		#global_position = start_pos1.global_position
+		global_position = start_pos1.global_position
 		Global.dead = false
 	if Input.is_action_just_pressed("quick_level"):
 		global_position = start_pos1.global_position
@@ -99,9 +99,10 @@ func _on_animation_finished() -> void:
 		
 		
 func level_up_precursor() -> void:
-	if unlocked["level3"]:
+	if unlocked.get("level3"):
 		level_up(2)
-	elif unlocked["level2"]:
+		
+	elif unlocked.get("level2"):
 		level_up(1)
 		Global.unlocked = {
 			"checkpoint" : false,

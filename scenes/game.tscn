@@ -115,6 +115,7 @@ position = Vector2(0, 260)
 [node name="Door" type="Area2D" parent="Map" unique_id=146465089]
 position = Vector2(56, 2181)
 script = ExtResource("2_rysoc")
+level_to_unlock = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Door" unique_id=1396905371]
 shape = SubResource("RectangleShape2D_8o121")
@@ -377,6 +378,7 @@ price = 10
 thing = "level3"
 
 [node name="CHECKPOINTS" parent="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer" unique_id=520283620 instance=ExtResource("8_kvpfn")]
+visible = false
 layout_mode = 2
 price = 0
 thing = "checkpoints"
