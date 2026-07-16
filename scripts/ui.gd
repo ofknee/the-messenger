@@ -27,11 +27,11 @@ func _on_leave_shop_pressed() -> void:
 	
 func update_ui():
 	#check kill filter
-	if unlocked["color"] and grayscale:
+	if unlocked.get("color") and grayscale:
 		grayscale.queue_free()
 		print('color deleted')
 	if Global.level == 1:
 		if unlocked["checkpoints"] == true:
 			check_node.visible = true
-	if unlocked["sfx"] == true:
+	if unlocked.get("sfx") == true:
 		AudioServer.set_bus_mute(bus_index, false)

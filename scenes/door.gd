@@ -12,7 +12,6 @@ func _on_body_entered(body: Node2D) -> void:
 			anim.play("open")
 		if level_to_unlock == Global.Level.SPIKES:
 			unlocked["level2"] = false
-			unlocked["checkpoints"] = false
 		elif level_to_unlock == Global.Level.ADVANCED:
 			unlocked["level3"] = false
 
