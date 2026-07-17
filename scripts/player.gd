@@ -99,17 +99,19 @@ func _on_animation_finished() -> void:
 		
 		
 func level_up_precursor() -> void:
-	if unlocked.get("level2"):
-		Global.unlocked["checkpoints"] = true
-		Global.unlocked["terrorMode"] = false
-		unlocked = Global.unlocked
-		print("unlocked" , unlocked)
-		level_up(1)
-		SignalBus.level_up.emit(1)
+	if Global.level == Global.Level.BASIC:
+		if unlocked.get("level2"):
+			Global.unlocked["checkpoints"] = false
+			Global.unlocked["terrorMode"] = false
+			unlocked = Global.unlocked
+			print("unlocked" , unlocked)
+			level_up(1)
+			SignalBus.level_up.emit(1)
 		
 
 		
 func level_up(new_level : int) -> void:
+	Global.level = new_level
 	if new_level == Global.Level.SPIKES:
 		global_position = start_pos1.global_position
 	else:

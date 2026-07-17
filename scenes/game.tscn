@@ -120,7 +120,7 @@ unique_name_in_owner = true
 position = Vector2(0, 260)
 
 [node name="Door" type="Area2D" parent="Map" unique_id=146465089]
-position = Vector2(94, 901)
+position = Vector2(94, 2261)
 script = ExtResource("2_rysoc")
 level_to_unlock = 1
 
