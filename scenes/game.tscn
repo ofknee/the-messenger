@@ -124,6 +124,18 @@ shape = SubResource("RectangleShape2D_8o121")
 sprite_frames = SubResource("SpriteFrames_43hlm")
 autoplay = "default"
 
+[node name="Finish" type="Area2D" parent="Map" unique_id=699275613]
+position = Vector2(-27, -1404)
+script = ExtResource("2_rysoc")
+level_to_unlock = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Finish" unique_id=1487638596]
+shape = SubResource("RectangleShape2D_8o121")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Map/Finish" unique_id=386165661]
+sprite_frames = SubResource("SpriteFrames_43hlm")
+autoplay = "default"
+
 [node name="Player" parent="." unique_id=1850920723 node_paths=PackedStringArray("start_pos0", "start_pos1") instance=ExtResource("1_uwrxv")]
 visibility_layer = 4
 position = Vector2(4.7683716e-07, 39.999992)
@@ -341,13 +353,14 @@ layout_mode = 2
 layout_mode = 2
 tooltip_text = "GAME FEEL
 enable animations on all sprites"
-price = 2
+price = 6
 thing = "animation"
 
 [node name="SOUND" parent="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer" unique_id=895757374 instance=ExtResource("8_kvpfn")]
 layout_mode = 2
 tooltip_text = "GAME FEEL
 enable sound effects and background music"
+price = 6
 thing = "sfx"
 
 [node name="PARTICLES" parent="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1964785691 instance=ExtResource("8_kvpfn")]
@@ -365,14 +378,14 @@ thing = "camera"
 
 [node name="TERROR MODE" parent="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer" unique_id=2143273714 instance=ExtResource("8_kvpfn")]
 layout_mode = 2
-price = 2
+price = 5
 thing = "terrorMode"
 
 [node name="COLOR" parent="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer" unique_id=787159581 instance=ExtResource("8_kvpfn")]
 layout_mode = 2
 tooltip_text = "GAME EASE/FEEL
 switch the game from black and white to color"
-price = 3
+price = 7
 thing = "color"
 
 [node name="LEVEL2" parent="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1236946975 instance=ExtResource("8_kvpfn")]
@@ -393,7 +406,7 @@ thing = "level3"
 layout_mode = 2
 tooltip_text = "GAME EASE
 allow your highest location to be saved through checkpoints"
-price = 0
+price = 5
 thing = "checkpoints"
 
 [node name="HSeparator" type="HSeparator" parent="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer" unique_id=870113532]
@@ -465,19 +478,7 @@ scale = Vector2(0.5, 0.5)
 
 [node name="bgMusic" parent="." unique_id=1807819626 instance=ExtResource("15_ir15t")]
 
-[node name="Door" type="Area2D" parent="." unique_id=699275613]
-position = Vector2(-27, -1614)
-script = ExtResource("2_rysoc")
-level_to_unlock = 1
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Door" unique_id=1487638596]
-shape = SubResource("RectangleShape2D_8o121")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Door" unique_id=386165661]
-sprite_frames = SubResource("SpriteFrames_43hlm")
-autoplay = "default"
-
 [connection signal="body_entered" from="Map/Door" to="Map/Door" method="_on_body_entered"]
+[connection signal="body_entered" from="Map/Finish" to="Map/Finish" method="_on_body_entered"]
 [connection signal="pressed" from="UI/Control/MarginContainer/ShopButton/Button" to="UI" method="_on_button_pressed"]
 [connection signal="pressed" from="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer/LeaveShop" to="UI" method="_on_leave_shop_pressed"]
-[connection signal="body_entered" from="Door" to="Door" method="_on_body_entered"]
