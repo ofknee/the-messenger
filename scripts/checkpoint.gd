@@ -52,7 +52,7 @@ func _add_to_door_list(body):
 
 func _ready() -> void:
 	SignalBus.thing_bought.connect(open_doors)
-	check_node.visible = false
+	check_node.visible = true
 
 func open_doors():
 	if unlocked["animation"]:
