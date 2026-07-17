@@ -358,64 +358,67 @@ layout_mode = 2
 
 [node name="ANIMATION" parent="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1763438241 instance=ExtResource("8_kvpfn")]
 layout_mode = 2
-tooltip_text = "GAME FEEL
-enable animations on all sprites"
 price = 5
 thing = "animation"
+tooltip_info = "enable animations on all sprites
+[b]GAME FEEL[/b]"
 
 [node name="SOUND" parent="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer" unique_id=895757374 instance=ExtResource("8_kvpfn")]
 layout_mode = 2
-tooltip_text = "GAME FEEL
-enable sound effects and background music"
 price = 5
 thing = "sfx"
+tooltip_info = "enable sound effects and background music
+[b]GAME FEEL[/b]"
 
 [node name="PARTICLES" parent="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1964785691 instance=ExtResource("8_kvpfn")]
 visible = false
 layout_mode = 2
 price = 5
 thing = "particles"
+tooltip_info = "enable animations on all sprites
+[b]GAME FEEL[/b]"
 
 [node name="CAMERA SMOOTHING" parent="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1928421714 instance=ExtResource("8_kvpfn")]
 layout_mode = 2
-tooltip_text = "GAME FEEL
-enable smoother camera movement with movement"
 price = 5
 thing = "camera"
+tooltip_info = "enable smoother camera movement with movement
+[b]GAME FEEL[/b]"
 
 [node name="TERROR MODE" parent="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer" unique_id=2143273714 instance=ExtResource("8_kvpfn")]
 layout_mode = 2
-tooltip_text = "??????"
 price = 5
 thing = "terrorMode"
+tooltip_info = "??????"
 
 [node name="COLOR" parent="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer" unique_id=787159581 instance=ExtResource("8_kvpfn")]
 layout_mode = 2
-tooltip_text = "GAME EASE/FEEL
-switch the game from black and white to color"
 price = 5
 thing = "color"
+tooltip_info = "switch the game from black and white to color
+[b]GAME EASE/FEEL[/b]"
 
 [node name="LEVEL2" parent="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1236946975 instance=ExtResource("8_kvpfn")]
 layout_mode = 2
-tooltip_text = "PROGRESSION
-move to the next level
-(purchase your necessities now—these will not follow you into the neext level)"
 price = 5
 thing = "level2"
+tooltip_info = "move to the next level
+(purchase your other necessities now—these will not follow you into the neext level!)[b]PROGRESSION[/b]"
 
 [node name="LEVEL3" parent="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer" unique_id=50084127 instance=ExtResource("8_kvpfn")]
 visible = false
 layout_mode = 2
 price = 5
 thing = "level3"
+tooltip_info = "enable animations on all sprites
+[b]GAME FEEL[/b]"
 
 [node name="CHECKPOINTS" parent="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer" unique_id=520283620 instance=ExtResource("8_kvpfn")]
 layout_mode = 2
-tooltip_text = "GAME EASE
-allow your highest location to be saved through checkpoints"
 price = 5
 thing = "checkpoints"
+tooltip_info = "allow your highest location to be saved through checkpoints
+[b]GAME EASE[/b]"
 
 [node name="HSeparator" type="HSeparator" parent="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer" unique_id=870113532]
 self_modulate = Color(1, 1, 1, 0)
