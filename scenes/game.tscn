@@ -17,6 +17,9 @@
 [ext_resource type="PackedScene" uid="uid://cxho6q0gvx438" path="res://scenes/checkpoint.tscn" id="12_dinhu"]
 [ext_resource type="PackedScene" uid="uid://c0scgmfkl2567" path="res://scenes/spike.tscn" id="15_1kice"]
 [ext_resource type="PackedScene" uid="uid://dai7e672v37ib" path="res://scenes/bg_music.tscn" id="15_ir15t"]
+[ext_resource type="Texture2D" uid="uid://ba7kv1nl8bml4" path="res://assets/ui/Complete_UI_Book_Styles_Pack_Free_v1.0 2/01_TravelBookLite/Sprites Animated/UI_TravelBook_MouseCursorClick01a_1.png" id="18_1kice"]
+[ext_resource type="Texture2D" uid="uid://dlmku4fi7ami1" path="res://assets/ui/Complete_UI_Book_Styles_Pack_Free_v1.0 2/01_TravelBookLite/Sprites Animated/UI_TravelBook_MouseCursorClick01a_2.png" id="19_5newe"]
+[ext_resource type="Texture2D" uid="uid://xqgm8gpu7t6q" path="res://assets/ui/Complete_UI_Book_Styles_Pack_Free_v1.0 2/01_TravelBookLite/Sprites Animated/UI_TravelBook_MouseCursorClick01a_3.png" id="20_37s47"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8o121"]
 size = Vector2(46, 56)
@@ -98,6 +101,23 @@ texture_margin_left = 10.0
 texture_margin_top = 10.0
 texture_margin_right = 10.0
 texture_margin_bottom = 10.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l57lt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_1kice")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_5newe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_37s47")
+}],
+"loop": 1,
+"name": &"click_menu",
+"speed": 5.0
+}]
 
 [node name="Game" type="Node2D" unique_id=630479902]
 
@@ -539,6 +559,10 @@ position = Vector2(86.5, -411.5)
 scale = Vector2(0.5, 0.5)
 
 [node name="bgMusic" parent="." unique_id=1807819626 instance=ExtResource("15_ir15t")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=999282534]
+sprite_frames = SubResource("SpriteFrames_l57lt")
+animation = &"click_menu"
 
 [connection signal="body_entered" from="Map/Door" to="Map/Door" method="_on_body_entered"]
 [connection signal="body_entered" from="Map/Finish" to="Map/Finish" method="_on_body_entered"]
