@@ -28,8 +28,7 @@ func update_coins(coins: int) -> void:
 	
 func _on_button_pressed() -> void:
 	shop.show()
-	if unlocked.has("level2"):
-		#level_arrow.position.y = level_2.position.y
+	if unlocked.has("level2") and unlocked.get("level2") == false:
 		level_arrow.show()
 	click_arrow.hide()
 
