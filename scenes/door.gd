@@ -9,7 +9,10 @@ extends Area2D
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
 		print("door", level_to_unlock, "reached")
-		click_arrow.show()
+		if Global.level == Global.Level.BASIC:
+			click_arrow.show()
+		if Global.level != Global.Level.BASIC:
+			click_arrow.hide()
 		if anim.animation != "open":
 			anim.play("open")
 		if level_to_unlock == Global.Level.SPIKES:
