@@ -16,7 +16,7 @@ func _on_body_entered(body: Node2D) -> void:
 		if type.value < 5:
 			Global.coins += type.value
 		else:
-			Global.coins += randi_range(3,8)
+			Global.coins += randi_range(5,8)
 	if unlocked.get("sfx") == true:
 		animation_player.play("pickup")
 	else:
