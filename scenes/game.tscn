@@ -380,27 +380,27 @@ layout_mode = 2
 layout_mode = 2
 tooltip_text = "GAME FEEL
 enable animations on all sprites"
-price = 6
+price = 5
 thing = "animation"
 
 [node name="SOUND" parent="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer" unique_id=895757374 instance=ExtResource("8_kvpfn")]
 layout_mode = 2
 tooltip_text = "GAME FEEL
 enable sound effects and background music"
-price = 6
+price = 5
 thing = "sfx"
 
 [node name="PARTICLES" parent="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1964785691 instance=ExtResource("8_kvpfn")]
 visible = false
 layout_mode = 2
-price = 3
+price = 5
 thing = "particles"
 
 [node name="CAMERA SMOOTHING" parent="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1928421714 instance=ExtResource("8_kvpfn")]
 layout_mode = 2
 tooltip_text = "GAME FEEL
 enable smoother camera movement with movement"
-price = 3
+price = 5
 thing = "camera"
 
 [node name="TERROR MODE" parent="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer" unique_id=2143273714 instance=ExtResource("8_kvpfn")]
@@ -413,21 +413,21 @@ thing = "terrorMode"
 layout_mode = 2
 tooltip_text = "GAME EASE/FEEL
 switch the game from black and white to color"
-price = 7
+price = 5
 thing = "color"
 
 [node name="LEVEL2" parent="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1236946975 instance=ExtResource("8_kvpfn")]
 layout_mode = 2
 tooltip_text = "PROGRESSION
 move to the next level
-(lives will be lost with your wealth as the cost)"
-price = 2
+(purchase your necessities now—these will not follow you into the neext level)"
+price = 5
 thing = "level2"
 
 [node name="LEVEL3" parent="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer" unique_id=50084127 instance=ExtResource("8_kvpfn")]
 visible = false
 layout_mode = 2
-price = 10
+price = 5
 thing = "level3"
 
 [node name="CHECKPOINTS" parent="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer" unique_id=520283620 instance=ExtResource("8_kvpfn")]
