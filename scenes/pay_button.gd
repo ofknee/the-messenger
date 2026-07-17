@@ -34,7 +34,7 @@ func setup():
 		else:
 			hide()
 	else:
-		if thing in Global.unlocked.keys():
+		if thing in l2unlocks:
 			label.text = name
 			price_display.text = str(price)
 			payable(0) #check if should be disabled or now
