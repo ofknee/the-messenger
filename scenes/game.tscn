@@ -92,6 +92,13 @@ texture_margin_top = 10.0
 texture_margin_right = 10.0
 texture_margin_bottom = 10.0
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8o121"]
+texture = ExtResource("4_p57ef")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+
 [node name="Game" type="Node2D" unique_id=630479902]
 
 [node name="terrorMode" type="CanvasModulate" parent="." unique_id=465571593]
@@ -167,6 +174,7 @@ script = ExtResource("3_lbhrr")
 
 [node name="ShaderCanvas" type="CanvasLayer" parent="UI" unique_id=509785642]
 layer = 3
+visible = false
 
 [node name="Grayscale" type="ColorRect" parent="UI/ShaderCanvas" unique_id=1870708562]
 material = SubResource("ShaderMaterial_8o121")
@@ -446,6 +454,60 @@ modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 theme_override_constants/separation = 11
+
+[node name="GameOver" type="Control" parent="UI" unique_id=305656231]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/GameOver" unique_id=933202533]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="Panel" type="Panel" parent="UI/GameOver/MarginContainer" unique_id=680972778]
+self_modulate = Color(0.6922667, 0.528, 0.88, 1)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_8o121")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="UI/GameOver/MarginContainer/Panel" unique_id=35820171]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(18.892157, 18.892157, 18.892157, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0.49728814, 0.8156863)
+theme_override_constants/shadow_outline_size = 6
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/normal_font = ExtResource("5_u5sy4")
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+text = "YOU'VE REACHED THE END.
+
+
+
+
+
+WAS THAT
+[font_size=40][color=crimson][outline_size=12][outline_color=white]\" FUN \"[/outline_color][/outline_size][/color][/font_size]
+?????"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="killzone" parent="." unique_id=128409644 node_paths=PackedStringArray("start_pos0", "start_pos1") instance=ExtResource("15_1kice")]
 position = Vector2(119, -74.99999)
