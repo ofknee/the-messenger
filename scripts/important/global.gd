@@ -6,7 +6,6 @@ var unlocked = {
 	"animation" : false,
 	"sfx" : false,
 	"camera" : false,
-	"terrorMode" : false,
 	"color" : false,
 } 
 enum Level {

@@ -174,7 +174,6 @@ script = ExtResource("3_lbhrr")
 
 [node name="ShaderCanvas" type="CanvasLayer" parent="UI" unique_id=509785642]
 layer = 3
-visible = false
 
 [node name="Grayscale" type="ColorRect" parent="UI/ShaderCanvas" unique_id=1870708562]
 material = SubResource("ShaderMaterial_8o121")
@@ -386,6 +385,7 @@ thing = "camera"
 
 [node name="TERROR MODE" parent="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer" unique_id=2143273714 instance=ExtResource("8_kvpfn")]
 layout_mode = 2
+tooltip_text = "??????"
 price = 5
 thing = "terrorMode"
 
@@ -401,7 +401,7 @@ layout_mode = 2
 tooltip_text = "PROGRESSION
 move to the next level
 (lives will be lost with your wealth as the cost)"
-price = 8
+price = 2
 thing = "level2"
 
 [node name="LEVEL3" parent="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer" unique_id=50084127 instance=ExtResource("8_kvpfn")]

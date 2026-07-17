@@ -5,6 +5,7 @@ extends CanvasLayer
 @onready var grayscale = $ShaderCanvas/Grayscale
 @onready var camera = $"../Player/Camera2D"
 @onready var check_node = %checkpoints
+@onready var game_over = $GameOver
 var bus_index = AudioServer.get_bus_index("Music")
 var unlocked = Global.unlocked
 
@@ -12,8 +13,11 @@ func _ready() -> void:
 	AudioServer.set_bus_mute(bus_index, true)
 	Global.currency_changed.connect(update_coins)
 	SignalBus.thing_bought.connect(update_ui)
+	SignalBus.game_over.connect(game_over_screen)
 	update_coins(Global.coins)
 	shop.hide()
+	game_over.hide()
+	
 
 func update_coins(coins: int) -> void:
 	label.text = str(coins)
@@ -35,3 +39,6 @@ func update_ui():
 			check_node.visible = true
 	if unlocked.get("sfx") == true:
 		AudioServer.set_bus_mute(bus_index, false)
+		
+func game_over_screen():
+	game_over.show()
