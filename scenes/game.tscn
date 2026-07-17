@@ -81,6 +81,23 @@ blend_mode = 2
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8o121"]
 shader = ExtResource("11_kvpfn")
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_l57lt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_1kice")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_5newe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_37s47")
+}],
+"loop": 1,
+"name": &"level_click",
+"speed": 5.0
+}]
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iywne"]
 texture = ExtResource("4_p57ef")
 texture_margin_left = 10.0
@@ -101,23 +118,6 @@ texture_margin_left = 10.0
 texture_margin_top = 10.0
 texture_margin_right = 10.0
 texture_margin_bottom = 10.0
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_l57lt"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("18_1kice")
-}, {
-"duration": 1.0,
-"texture": ExtResource("19_5newe")
-}, {
-"duration": 1.0,
-"texture": ExtResource("20_37s47")
-}],
-"loop": 1,
-"name": &"click_menu",
-"speed": 5.0
-}]
 
 [node name="Game" type="Node2D" unique_id=630479902]
 
@@ -140,11 +140,11 @@ unique_name_in_owner = true
 position = Vector2(0, 260)
 
 [node name="Door" type="Area2D" parent="Map" unique_id=146465089]
-position = Vector2(94, 901)
+position = Vector2(95, 1925)
 script = ExtResource("2_rysoc")
 level_to_unlock = 1
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Door" unique_id=1396905371]
+[node name="door_l1" type="CollisionShape2D" parent="Map/Door" unique_id=1396905371]
 shape = SubResource("RectangleShape2D_8o121")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Map/Door" unique_id=1633982339]
@@ -230,6 +230,17 @@ theme_override_constants/margin_left = 15
 theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 15
 theme_override_constants/margin_bottom = 15
+
+[node name="click_arrow" type="AnimatedSprite2D" parent="UI/Control/MarginContainer" unique_id=999282534]
+unique_name_in_owner = true
+z_index = 1
+position = Vector2(549, 79)
+scale = Vector2(4.44, 4.44)
+sprite_frames = SubResource("SpriteFrames_l57lt")
+animation = &"level_click"
+autoplay = "level_click"
+frame_progress = 0.0763633
+flip_h = true
 
 [node name="Bank" type="PanelContainer" parent="UI/Control/MarginContainer" unique_id=1556020514]
 self_modulate = Color(0.85814106, 0.85814106, 0.85814106, 1)
@@ -342,10 +353,20 @@ expand_mode = 3
 stretch_mode = 5
 
 [node name="Shop" type="Control" parent="UI/Control/MarginContainer" unique_id=823807057]
-visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+
+[node name="level_arrow" type="Area2D" parent="UI/Control/MarginContainer/Shop" unique_id=1887621470]
+position = Vector2(39, 107)
+scale = Vector2(3.887865, 3.887865)
+
+[node name="level_arrow_anim" type="AnimatedSprite2D" parent="UI/Control/MarginContainer/Shop/level_arrow" unique_id=2020525862]
+z_index = 1
+sprite_frames = SubResource("SpriteFrames_l57lt")
+animation = &"level_click"
+autoplay = "level_click"
+flip_h = true
 
 [node name="NinePatchRect" type="TextureRect" parent="UI/Control/MarginContainer/Shop" unique_id=117715359]
 layout_mode = 1
@@ -375,6 +396,18 @@ theme_override_constants/margin_bottom = 50
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer" unique_id=1643178641]
 layout_mode = 2
+
+[node name="LEVEL2" parent="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1236946975 instance=ExtResource("8_kvpfn")]
+layout_mode = 2
+tooltip_text = "PROGRESSION
+move to the next level
+(purchase your necessities now—these will not follow you into the neext level)"
+price = 0
+thing = "level2"
+
+[node name="level_2_pos" type="Marker2D" parent="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer/LEVEL2" unique_id=1933520945]
+position = Vector2(-11, 7)
+scale = Vector2(3.887865, 3.887865)
 
 [node name="ANIMATION" parent="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1763438241 instance=ExtResource("8_kvpfn")]
 layout_mode = 2
@@ -415,14 +448,6 @@ tooltip_text = "GAME EASE/FEEL
 switch the game from black and white to color"
 price = 5
 thing = "color"
-
-[node name="LEVEL2" parent="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1236946975 instance=ExtResource("8_kvpfn")]
-layout_mode = 2
-tooltip_text = "PROGRESSION
-move to the next level
-(purchase your necessities now—these will not follow you into the neext level)"
-price = 5
-thing = "level2"
 
 [node name="LEVEL3" parent="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer" unique_id=50084127 instance=ExtResource("8_kvpfn")]
 visible = false
@@ -476,6 +501,7 @@ layout_mode = 2
 theme_override_constants/separation = 11
 
 [node name="GameOver" type="Control" parent="UI" unique_id=305656231]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -563,10 +589,6 @@ position = Vector2(53.5, -700)
 scale = Vector2(0.5, 0.5)
 
 [node name="bgMusic" parent="." unique_id=1807819626 instance=ExtResource("15_ir15t")]
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=999282534]
-sprite_frames = SubResource("SpriteFrames_l57lt")
-animation = &"click_menu"
 
 [connection signal="body_entered" from="Map/Door" to="Map/Door" method="_on_body_entered"]
 [connection signal="body_entered" from="Map/Finish" to="Map/Finish" method="_on_body_entered"]

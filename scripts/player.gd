@@ -8,6 +8,8 @@ const JUMP_VELOCITY = -370.0
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var land = $land
 @onready var death = $death
+@onready var click_arrow = %click_arrow
+@onready var level_arrow = $"../UI/Control/MarginContainer/Shop/level_arrow"
 @export var start_pos0 : Marker2D
 @export var start_pos1 : Marker2D
 @export var start_pos2 : Marker2D
@@ -21,6 +23,8 @@ func _ready() -> void:
 	global_position = start_pos0.global_position
 	SignalBus.level_up.connect(level_up)
 	SignalBus.thing_bought.connect(level_up_precursor)
+	click_arrow.hide()
+	level_arrow.hide()
 
 func _physics_process(delta: float) -> void:
 	if Global.dead == true:
