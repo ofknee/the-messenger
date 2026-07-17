@@ -339,11 +339,15 @@ layout_mode = 2
 
 [node name="ANIMATION" parent="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1763438241 instance=ExtResource("8_kvpfn")]
 layout_mode = 2
+tooltip_text = "GAME FEEL
+enable animations on all sprites"
 price = 2
 thing = "animation"
 
 [node name="SOUND" parent="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer" unique_id=895757374 instance=ExtResource("8_kvpfn")]
 layout_mode = 2
+tooltip_text = "GAME FEEL
+enable sound effects and background music"
 thing = "sfx"
 
 [node name="PARTICLES" parent="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1964785691 instance=ExtResource("8_kvpfn")]
@@ -354,6 +358,8 @@ thing = "particles"
 
 [node name="CAMERA SMOOTHING" parent="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1928421714 instance=ExtResource("8_kvpfn")]
 layout_mode = 2
+tooltip_text = "GAME FEEL
+enable smoother camera movement with movement"
 price = 3
 thing = "camera"
 
@@ -364,11 +370,16 @@ thing = "terrorMode"
 
 [node name="COLOR" parent="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer" unique_id=787159581 instance=ExtResource("8_kvpfn")]
 layout_mode = 2
+tooltip_text = "GAME EASE/FEEL
+switch the game from black and white to color"
 price = 3
 thing = "color"
 
 [node name="LEVEL2" parent="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1236946975 instance=ExtResource("8_kvpfn")]
 layout_mode = 2
+tooltip_text = "PROGRESSION
+move to the next level
+(lives will be lost with your wealth as the cost)"
 price = 8
 thing = "level2"
 
@@ -380,6 +391,8 @@ thing = "level3"
 
 [node name="CHECKPOINTS" parent="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer" unique_id=520283620 instance=ExtResource("8_kvpfn")]
 layout_mode = 2
+tooltip_text = "GAME EASE
+allow your highest location to be saved through checkpoints"
 price = 0
 thing = "checkpoints"
 
