@@ -40,6 +40,8 @@ theme_override_styles/hover = ExtResource("3_kx4ns")
 theme_override_styles/disabled = ExtResource("4_i218w")
 toggle_mode = true
 script = ExtResource("2_cmjl1")
+price = null
+thing = null
 
 [node name="Label" type="RichTextLabel" parent="." unique_id=1114800284]
 layout_mode = 1
@@ -108,6 +110,7 @@ stretch_mode = 5
 
 [node name="Tooltip" type="PanelContainer" parent="." unique_id=805221521]
 self_modulate = Color(0.735357, 0.735357, 0.735357, 0.74509805)
+top_level = true
 custom_maximum_size = Vector2(213.55, -1)
 layout_mode = 1
 offset_right = 1.0
