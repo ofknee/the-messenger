@@ -1,9 +1,11 @@
 extends Button
 @export var price : int = 1
 @export var thing : String = "example" # thing to buy
+@export_multiline var tooltip_info: String
 @onready var price_display = $Price
 @onready var label = $Label
 @onready var tooltip = $Tooltip
+@onready var tooltip_content =  $Tooltip/Content
 var bought : bool = false
 var l1unlocks = Global.unlocked.keys()
 var l2unlocks = ["checkpoints", "terrorMode"]
