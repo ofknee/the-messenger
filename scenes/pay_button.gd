@@ -4,22 +4,36 @@ extends Button
 @onready var price_display = $Price
 @onready var label = $Label
 var bought : bool = false
-
+var l1unlocks = Global.unlocked.keys()
+var l2unlocks = ["checkpoints", "terrorMode"]
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	disabled = true
 	setup()
 	Global.currency_changed.connect(payable)
 	SignalBus.door_entered.connect(setup)
+	SignalBus.level_up.connect(setup_redirect)
+	
+func setup_redirect ( _throwaway : int ) :
+	setup()
 	
 func setup():
-	if thing in Global.unlocked.keys():
-		label.text = name
-		price_display.text = str(price)
-		payable(0) #check if should be disabled or now
-		show()
+	if Global.level == Global.Level.BASIC:
+		if thing in Global.unlocked.keys():
+			label.text = name
+			price_display.text = str(price)
+			payable(0) #check if should be disabled or now
+			show()
+		else:
+			hide()
 	else:
-		hide()
+		if thing in Global.unlocked.keys():
+			label.text = name
+			price_display.text = str(price)
+			payable(0) #check if should be disabled or now
+			show()
+		else:
+			hide()
 		
 
 func _on_pressed() -> void: 

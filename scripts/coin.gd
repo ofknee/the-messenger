@@ -8,7 +8,7 @@ func _ready() -> void:
 	anim.sprite_frames = type.anim
 	
 func _process(delta: float) -> void:
-	if unlocked["animation"] == true:
+	if unlocked.get("animation") == true:
 			anim.play()
 
 func _on_body_entered(body: Node2D) -> void:
@@ -17,7 +17,7 @@ func _on_body_entered(body: Node2D) -> void:
 			Global.coins += type.value
 		else:
 			Global.coins += randi_range(3,8)
-	if unlocked["sfx"] == true:
+	if unlocked.get("sfx") == true:
 		animation_player.play("pickup")
 	else:
 		queue_free()

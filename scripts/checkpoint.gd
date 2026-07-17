@@ -18,7 +18,7 @@ var saved_doors : Array
 
 func _on_body_entered(body: Node2D) -> void:
 	if Global.level >= 1:
-		if unlocked["checkpoints"] == true:
+		if unlocked.get("checkpoints"):
 			print(self.position.y, self)
 			_add_to_door_list(self)
 			_is_higher(self)
@@ -28,7 +28,8 @@ func _on_body_entered(body: Node2D) -> void:
 	#print(Global.high_check)
 
 func _is_higher(node: Area2D):
-	if unlocked["checkpoints"] == true:
+	if unlocked.get("checkpoints"):
+		print("IT WAS UNLOCKEDDDDD")
 		if node.position.y < Global.high_check:
 			Global.high_check = node.position.y
 			Global.high_checkpoint = node
@@ -51,10 +52,10 @@ func _add_to_door_list(body):
 
 func _ready() -> void:
 	SignalBus.thing_bought.connect(open_doors)
-	check_node.visible = false
+	check_node.visible = true
 
 func open_doors():
-	if unlocked["animation"]:
+	if unlocked.get("animation"):
 		for item in saved_doors:
 			animated_sprite.play("open")
 			saved_doors.erase(item)

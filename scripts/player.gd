@@ -24,7 +24,7 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	if Global.dead == true:
-		if unlocked["sfx"]:
+		if unlocked.get("sfx"):
 			death.play()
 		global_position = start_pos1.global_position
 		Global.dead = false
@@ -32,26 +32,27 @@ func _physics_process(delta: float) -> void:
 		global_position = start_pos1.global_position
 		
 	if Input.is_action_just_pressed("terror_mode"):
-		if unlocked["terrorMode"] == false:
+		if unlocked.get("terrorMode") == false:
 			unlocked["terrorMode"] = true
 		else:
 			unlocked["terrorMode"] = false
 			flashlight.visible = false
 			terrorMode.visible = false
 			
-	if unlocked["terrorMode"]:
+	if unlocked.get("terrorMode"):
 		flashlight.visible = true
 		terrorMode.visible = true
 		
 	if Input.is_action_just_pressed("dead"):
-		unlocked["animation"] = true
+		if unlocked.get("animation") :
+			unlocked["animation"] = true
 		print("animation unlocked")
 
 	was_on_floor = is_on_floor()
 
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-		if unlocked["animation"] and not landing:
+		if unlocked.get("animation") and not landing:
 			if velocity.y < 0:
 				animated_sprite.play("jump")
 			else:
@@ -60,7 +61,7 @@ func _physics_process(delta: float) -> void:
 		
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
-		if unlocked["animation"]:
+		if unlocked.get("animation"):
 			animated_sprite.play("jump")
 	var direction := Input.get_axis("walk_l", "walk_r")
 	
@@ -77,18 +78,18 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 	if not was_on_floor and is_on_floor():
-		if unlocked["animation"]:
+		if unlocked.get("animation"):
 			landing = true
 			animated_sprite.play("land")
-		if unlocked["sfx"]:
+		if unlocked.get("sfx"):
 			land.play()
 
 	if is_on_floor() and not landing:
 		if direction:
-			if unlocked["animation"]:
+			if unlocked.get("animation"):
 				animated_sprite.play("run")
 		else:
-			if unlocked["animation"]:
+			if unlocked.get("animation"):
 				animated_sprite.play("idle")
 
 
@@ -98,13 +99,19 @@ func _on_animation_finished() -> void:
 		
 		
 func level_up_precursor() -> void:
-	if unlocked.get("level3"):
-		level_up(2)
+	if Global.level == Global.Level.BASIC:
+		if unlocked.get("level2"):
+			Global.unlocked["checkpoints"] = false
+			Global.unlocked["terrorMode"] = false
+			unlocked = Global.unlocked
+			print("unlocked" , unlocked)
+			level_up(1)
+			SignalBus.level_up.emit(1)
 		
-	elif unlocked.get("level2"):
-		level_up(1)
-		Global.unlocked["checkpoints"] = true
+
+		
 func level_up(new_level : int) -> void:
+	Global.level = new_level
 	if new_level == Global.Level.SPIKES:
 		global_position = start_pos1.global_position
 	else:

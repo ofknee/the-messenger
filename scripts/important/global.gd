@@ -1,21 +1,19 @@
 extends Node
 
+var level = Level.BASIC
 
 var unlocked = {
 	"animation" : false,
 	"sfx" : false,
 	"camera" : false,
-	"terrorMode" : false,
 	"color" : false,
 	"checkpoints" : false,
 } 
-
 enum Level {
 	BASIC,
 	SPIKES,
 	ADVANCED
 }
-var level = Level.BASIC
 #var bg_play = false
 
 var high_check = 10000
