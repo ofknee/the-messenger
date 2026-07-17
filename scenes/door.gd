@@ -2,12 +2,14 @@ extends Area2D
 @export var level_to_unlock : int
 @onready var unlocked = Global.unlocked
 @onready var anim = $AnimatedSprite2D
+@onready var click_arrow = %click_arrow
 
 
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
 		print("door", level_to_unlock, "reached")
+		click_arrow.show()
 		if anim.animation != "open":
 			anim.play("open")
 		if level_to_unlock == Global.Level.SPIKES:

@@ -7,6 +7,7 @@ var unlocked = {
 	"sfx" : false,
 	"camera" : false,
 	"color" : false,
+	"checkpoints" : false,
 } 
 enum Level {
 	BASIC,
