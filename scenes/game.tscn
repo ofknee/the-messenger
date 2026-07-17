@@ -506,6 +506,15 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
+[node name="ColorRect" type="ColorRect" parent="UI/GameOver" unique_id=1686620693]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.24705882, 0.21960784, 0.31764707, 1)
+
 [node name="MarginContainer" type="MarginContainer" parent="UI/GameOver" unique_id=933202533]
 layout_mode = 1
 anchors_preset = 15
