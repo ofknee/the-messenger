@@ -17,13 +17,12 @@ var saved_doors : Array
 
 
 func _on_body_entered(body: Node2D) -> void:
-	if body.name == "Player":
-		if Global.level >= 1:
-			if unlocked.get("checkpoints"):
-				print(self.position.y, self)
-				_add_to_door_list(self)
-				_is_higher(self)
-					
+	if Global.level >= 1:
+		if unlocked.get("checkpoints"):
+			print(self.position.y, self)
+			_add_to_door_list(self)
+			_is_higher(self)
+				
 		
 	
 	#print(Global.high_check)
