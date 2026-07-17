@@ -399,11 +399,10 @@ layout_mode = 2
 
 [node name="LEVEL2" parent="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1236946975 instance=ExtResource("8_kvpfn")]
 layout_mode = 2
-tooltip_text = "PROGRESSION
-move to the next level
-(purchase your necessities now—these will not follow you into the neext level)"
 price = 0
 thing = "level2"
+tooltip_info = "move to the next level
+(purchase your other necessities now—these will not follow you into the neext level!)[b]PROGRESSION[/b]"
 
 [node name="level_2_pos" type="Marker2D" parent="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer/LEVEL2" unique_id=1933520945]
 position = Vector2(-11, 7)
@@ -449,28 +448,13 @@ layout_mode = 2
 price = 5
 thing = "color"
 tooltip_info = "switch the game from black and white to color
-[b]GAME EASE/FEEL[/b]"
-
-[node name="LEVEL2" parent="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1236946975 instance=ExtResource("8_kvpfn")]
-layout_mode = 2
-price = 5
-thing = "level2"
-tooltip_info = "move to the next level
-(purchase your other necessities now—these will not follow you into the neext level!)[b]PROGRESSION[/b]"
-
-[node name="LEVEL3" parent="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer" unique_id=50084127 instance=ExtResource("8_kvpfn")]
-visible = false
-layout_mode = 2
-price = 5
-thing = "level3"
-tooltip_info = "enable animations on all sprites
 [b]GAME FEEL[/b]"
 
 [node name="CHECKPOINTS" parent="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer" unique_id=520283620 instance=ExtResource("8_kvpfn")]
 layout_mode = 2
 price = 5
 thing = "checkpoints"
-tooltip_info = "allow your highest location to be saved through checkpoints
+tooltip_info = "save your highest location
 [b]GAME EASE[/b]"
 
 [node name="HSeparator" type="HSeparator" parent="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer" unique_id=870113532]
