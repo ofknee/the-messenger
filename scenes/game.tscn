@@ -22,7 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://xqgm8gpu7t6q" path="res://assets/ui/Complete_UI_Book_Styles_Pack_Free_v1.0 2/01_TravelBookLite/Sprites Animated/UI_TravelBook_MouseCursorClick01a_3.png" id="20_37s47"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8o121"]
-size = Vector2(46, 52)
+size = Vector2(32, 52)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5newe"]
 atlas = ExtResource("4_264po")
