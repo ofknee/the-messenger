@@ -71,11 +71,11 @@ func _physics_process(delta: float) -> void:
 	
 	if direction:
 		velocity.x = direction * SPEED
-		
-		if direction < 0:
-			animated_sprite.flip_h = false
-		if direction > 0:
-			animated_sprite.flip_h = true
+		if unlocked.get("animation"):
+			if direction < 0:
+				animated_sprite.flip_h = false
+			if direction > 0:
+				animated_sprite.flip_h = true
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 

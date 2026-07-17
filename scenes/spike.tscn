@@ -8,6 +8,7 @@ rotation = -1.5764987
 script = ExtResource("1_7a7y0")
 
 [node name="Spike1" type="Sprite2D" parent="." unique_id=1986906324]
+modulate = Color(1, 0.4886667, 0.41000003, 1)
 position = Vector2(-0.008091498, 1.4206938)
 rotation = -0.0038721552
 scale = Vector2(2, 2)

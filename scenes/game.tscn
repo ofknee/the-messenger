@@ -401,8 +401,9 @@ layout_mode = 2
 layout_mode = 2
 price = 0
 thing = "level2"
-tooltip_info = "move to the next level
-(purchase your other necessities now—these will not follow you into the neext level!)[b]PROGRESSION[/b]"
+tooltip_info = "move on
+[color=tomato]warning[/color]: buy what you need now
+[b]PROGRESSION[/b]"
 
 [node name="level_2_pos" type="Marker2D" parent="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer/LEVEL2" unique_id=1933520945]
 position = Vector2(-11, 7)
