@@ -3,11 +3,15 @@ extends Button
 @export var thing : String = "example" # thing to buy
 @onready var price_display = $Price
 @onready var label = $Label
+@onready var tooltip = $Tooltip
 var bought : bool = false
 var l1unlocks = Global.unlocked.keys()
 var l2unlocks = ["checkpoints", "terrorMode"]
-# Called when the node enters the scene tree for the first time.
+
+
 func _ready() -> void:
+	mouse_entered.connect(on_mouse_entered)
+	mouse_exited.connect(on_mouse_exited)
 	disabled = true
 	setup()
 	Global.currency_changed.connect(payable)
@@ -54,3 +58,10 @@ func payable(_throwaway: int) -> bool:
 	else:
 		disabled = true
 		return false
+		
+
+##tooltip
+func on_mouse_entered():
+	tooltip.toggle(true)
+func on_mouse_exited():
+	tooltip.toggle(false)
