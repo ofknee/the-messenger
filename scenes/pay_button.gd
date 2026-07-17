@@ -1,9 +1,11 @@
 extends Button
 @export var price : int = 1
 @export var thing : String = "example" # thing to buy
+@export_multiline var tooltip_info: String
 @onready var price_display = $Price
 @onready var label = $Label
 @onready var tooltip = $Tooltip
+@onready var tooltip_content =  $Tooltip/Content
 var bought : bool = false
 var l1unlocks = Global.unlocked.keys()
 var l2unlocks = ["checkpoints", "terrorMode"]
@@ -12,6 +14,7 @@ var l2unlocks = ["checkpoints", "terrorMode"]
 func _ready() -> void:
 	mouse_entered.connect(on_mouse_entered)
 	mouse_exited.connect(on_mouse_exited)
+	tooltip_content.text = tooltip_info
 	disabled = true
 	setup()
 	Global.currency_changed.connect(payable)
