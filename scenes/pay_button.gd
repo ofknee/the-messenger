@@ -11,7 +11,7 @@ var l2unlocks = ["checkpoints", "terrorMode"]
 
 func _ready() -> void:
 	mouse_entered.connect(on_mouse_entered)
-	mouse_exited.connect(one_mouse_exited)
+	mouse_exited.connect(on_mouse_exited)
 	disabled = true
 	setup()
 	Global.currency_changed.connect(payable)
@@ -58,3 +58,10 @@ func payable(_throwaway: int) -> bool:
 	else:
 		disabled = true
 		return false
+		
+
+##tooltip
+func on_mouse_entered():
+	tooltip.toggle(true)
+func on_mouse_exited():
+	tooltip.toggle(false)
