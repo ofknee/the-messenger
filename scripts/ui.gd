@@ -9,6 +9,7 @@ extends CanvasLayer
 @onready var click_arrow = %click_arrow
 @onready var level_arrow = $Control/MarginContainer/Shop/level_arrow
 @onready var level_2 = $Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer/LEVEL2
+@onready var game_over_text = $GameOver/MarginContainer/Panel/RichTextLabel
 var bus_index = AudioServer.get_bus_index("Music")
 var unlocked = Global.unlocked
 
@@ -48,4 +49,5 @@ func update_ui():
 	if unlocked.get("level2") == true:
 		level_arrow.hide()
 func game_over_screen():
+	#game_over_text.text = "YOU'VE REACHED THE END.\n"str()+"\nWAS THAT\n[font_size=40][color=crimson][outline_size=12][outline_color=white]\" FUN \"[/outline_color][/outline_size][/color][/font_size]\n?????"
 	game_over.show()

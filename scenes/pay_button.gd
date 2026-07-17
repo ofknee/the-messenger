@@ -50,6 +50,7 @@ func _on_pressed() -> void:
 		#modulate.a = 0.5
 		Global.unlocked[thing] = true ##unlock
 		SignalBus.thing_bought.emit()
+		Global.buys.append(thing)
 		queue_free()
 	else:
 		print("ur broke lol")

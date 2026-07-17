@@ -26,3 +26,4 @@ var coins: int = 0: ##starting money
 		currency_changed.emit(val)
 		
 		
+var buys : Array = []
