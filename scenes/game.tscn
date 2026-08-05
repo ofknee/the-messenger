@@ -18,7 +18,9 @@
 [ext_resource type="PackedScene" uid="uid://c0scgmfkl2567" path="res://scenes/spike.tscn" id="15_1kice"]
 [ext_resource type="PackedScene" uid="uid://dai7e672v37ib" path="res://scenes/bg_music.tscn" id="15_ir15t"]
 [ext_resource type="Texture2D" uid="uid://ba7kv1nl8bml4" path="res://assets/ui/Complete_UI_Book_Styles_Pack_Free_v1.0 2/01_TravelBookLite/Sprites Animated/UI_TravelBook_MouseCursorClick01a_1.png" id="18_1kice"]
+[ext_resource type="Texture2D" uid="uid://c8xdir0l5a64a" path="res://assets/ui/warning.png" id="18_5newe"]
 [ext_resource type="Texture2D" uid="uid://dlmku4fi7ami1" path="res://assets/ui/Complete_UI_Book_Styles_Pack_Free_v1.0 2/01_TravelBookLite/Sprites Animated/UI_TravelBook_MouseCursorClick01a_2.png" id="19_5newe"]
+[ext_resource type="Script" uid="uid://5uyskka6nmle" path="res://scenes/warning.gd" id="19_37s47"]
 [ext_resource type="Texture2D" uid="uid://xqgm8gpu7t6q" path="res://assets/ui/Complete_UI_Book_Styles_Pack_Free_v1.0 2/01_TravelBookLite/Sprites Animated/UI_TravelBook_MouseCursorClick01a_3.png" id="20_37s47"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8o121"]
@@ -398,7 +400,7 @@ theme_override_constants/margin_bottom = 50
 [node name="VBoxContainer" type="VBoxContainer" parent="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer" unique_id=1643178641]
 layout_mode = 2
 
-[node name="LEVEL2" parent="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1236946975 instance=ExtResource("8_kvpfn")]
+[node name="LEVEL 2" parent="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1236946975 instance=ExtResource("8_kvpfn")]
 layout_mode = 2
 price = 0
 thing = "level2"
@@ -406,7 +408,13 @@ tooltip_info = "move on
 [color=tomato]warning[/color]: buy what you need now
 [b]PROGRESSION[/b]"
 
-[node name="level_2_pos" type="Marker2D" parent="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer/LEVEL2" unique_id=1933520945]
+[node name="Warning" type="Sprite2D" parent="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer/LEVEL 2" unique_id=357072195]
+position = Vector2(110, 26)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("18_5newe")
+script = ExtResource("19_37s47")
+
+[node name="level_2_pos" type="Marker2D" parent="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer/LEVEL 2" unique_id=1933520945]
 position = Vector2(-11, 7)
 scale = Vector2(3.887865, 3.887865)
 
@@ -425,7 +433,6 @@ tooltip_info = "enable sound effects and background music
 [b]GAME FEEL[/b]"
 
 [node name="PARTICLES" parent="UI/Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1964785691 instance=ExtResource("8_kvpfn")]
-visible = false
 layout_mode = 2
 price = 5
 thing = "particles"
