@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://dlmku4fi7ami1" path="res://assets/ui/Complete_UI_Book_Styles_Pack_Free_v1.0 2/01_TravelBookLite/Sprites Animated/UI_TravelBook_MouseCursorClick01a_2.png" id="19_5newe"]
 [ext_resource type="Script" uid="uid://5uyskka6nmle" path="res://scenes/warning.gd" id="19_37s47"]
 [ext_resource type="Texture2D" uid="uid://xqgm8gpu7t6q" path="res://assets/ui/Complete_UI_Book_Styles_Pack_Free_v1.0 2/01_TravelBookLite/Sprites Animated/UI_TravelBook_MouseCursorClick01a_3.png" id="20_37s47"]
+[ext_resource type="Script" uid="uid://b3gn5qwcs764e" path="res://scenes/game_over_text.gd" id="20_bt5mj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8o121"]
 size = Vector2(32, 52)
@@ -563,6 +564,7 @@ text = "YOU'VE REACHED THE END.
 THANK YOU FOR PLAYING!"
 horizontal_alignment = 1
 vertical_alignment = 1
+script = ExtResource("20_bt5mj")
 
 [node name="killzone" parent="." unique_id=128409644 node_paths=PackedStringArray("start_pos0", "start_pos1") instance=ExtResource("15_1kice")]
 position = Vector2(119, -74.99999)

@@ -73,6 +73,11 @@ func _physics_process(delta: float) -> void:
 			animated_sprite.play("jump")
 	var direction := Input.get_axis("walk_l", "walk_r")
 	
+	if Input.is_action_just_pressed("ui_down") and is_on_floor():
+		SignalBus.game_over.emit()
+
+	
+	
 	if direction:
 		velocity.x = direction * SPEED
 		if unlocked.get("animation"):

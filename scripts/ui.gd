@@ -8,7 +8,7 @@ extends CanvasLayer
 @onready var game_over = $GameOver
 @onready var click_arrow = %click_arrow
 @onready var level_arrow = $Control/MarginContainer/Shop/level_arrow
-@onready var level_2 = $Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer/LEVEL2
+@onready var level_2 = $"Control/MarginContainer/Shop/ScrollContainer/MarginContainer/VBoxContainer/LEVEL 2"
 @onready var game_over_text = $GameOver/MarginContainer/Panel/RichTextLabel
 var bus_index = AudioServer.get_bus_index("Music")
 var unlocked = Global.unlocked
