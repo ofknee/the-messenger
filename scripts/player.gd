@@ -10,6 +10,7 @@ const JUMP_VELOCITY = -370.0
 @onready var death = $death
 @onready var click_arrow = %click_arrow
 @onready var level_arrow = $"../UI/Control/MarginContainer/Shop/level_arrow"
+@onready var fall_particles = $FallImpactParticles/CPUParticles2D
 @export var start_pos0 : Marker2D
 @export var start_pos1 : Marker2D
 @export var start_pos2 : Marker2D
@@ -87,6 +88,8 @@ func _physics_process(delta: float) -> void:
 			animated_sprite.play("land")
 		if unlocked.get("sfx"):
 			land.play()
+		#if unlocked.get("particles"):
+		fall_particles.emitting = true
 
 	if is_on_floor() and not landing:
 		if direction:

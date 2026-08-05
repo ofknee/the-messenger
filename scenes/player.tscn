@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dwgco2i6vkyxr" path="res://scripts/player.gd" id="1_fjrip"]
 [ext_resource type="Texture2D" uid="uid://dch4qijkgwh4r" path="res://assets/character/Kings and Pigs/Sprites/02-King Pig/Idle (38x28).png" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://5ywswj1egwjh" path="res://assets/character/Kings and Pigs/Sprites/02-King Pig/Dead (38x28).png" id="1_tuyoq"]
+[ext_resource type="PackedScene" uid="uid://boxgxadmqsjh3" path="res://scenes/fall_impact_particles.tscn" id="2_d2wvv"]
 [ext_resource type="Texture2D" uid="uid://clu5yjrckqgjg" path="res://assets/character/Kings and Pigs/Sprites/02-King Pig/Fall (38x28).png" id="2_fjrip"]
 [ext_resource type="Texture2D" uid="uid://dd2igh7e7k5sn" path="res://assets/character/Kings and Pigs/Sprites/02-King Pig/Run (38x28).png" id="2_qhqgy"]
 [ext_resource type="Texture2D" uid="uid://bfk3n2f55083q" path="res://assets/character/Kings and Pigs/Sprites/02-King Pig/Jump (38x28).png" id="4_smehm"]
@@ -254,3 +255,16 @@ bus = &"SFX"
 
 [node name="death" type="AudioStreamPlayer2D" parent="." unique_id=1320328667]
 stream = ExtResource("10_d2wvv")
+
+[node name="FallImpactParticles" parent="." unique_id=914470159 instance=ExtResource("2_d2wvv")]
+position = Vector2(0, 13.66)
+
+[node name="CPUParticles2D" parent="FallImpactParticles" index="0" unique_id=631695987]
+lifetime = 0.3
+randomness = 0.3
+direction = Vector2(0, -1)
+spread = 65.0
+initial_velocity_min = 45.0
+initial_velocity_max = 85.0
+
+[editable path="FallImpactParticles"]
