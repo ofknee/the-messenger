@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://boxgxadmqsjh3"]
+
+[sub_resource type="Curve" id="Curve_43hlm"]
+_data = [Vector2(0.04473684, 0.8808141), 0.0, 0.0, 0, 0, Vector2(1, 0.13662797), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="FallImpactParticles" type="Node2D" unique_id=914470159]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=631695987]
+amount = 15
+explosiveness = 1.0
+randomness = 0.7
+emission_shape = 6
+emission_ring_inner_radius = 0.8
+emission_ring_radius = 1.0
+spread = 180.0
+gravity = Vector2(0, 40)
+initial_velocity_min = 5.0
+initial_velocity_max = 20.0
+scale_amount_min = 0.5
+scale_amount_max = 1.2
+scale_amount_curve = SubResource("Curve_43hlm")
