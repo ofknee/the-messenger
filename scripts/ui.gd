@@ -51,6 +51,8 @@ func update_ui():
 func game_over_screen():
 	#game_over_text.text = "YOU'VE REACHED THE END.\n"str()+"\nWAS THAT\n[font_size=40][color=crimson][outline_size=12][outline_color=white]\" FUN \"[/outline_color][/outline_size][/color][/font_size]\n?????"
 	game_over.modulate.a = 0.0
-	var tween = create_tween()
-	tween.tween_property(self, "modulate:a", 1.0, 1.5) # Fades in over 1.5 seconds
 	game_over.show()
+	var tween = create_tween()
+	tween.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
+	tween.tween_property(game_over, "modulate:a", 1.0, 1.5)
+	get_tree().paused = true

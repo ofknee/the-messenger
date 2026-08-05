@@ -20,7 +20,6 @@ func _on_body_entered(body: Node2D) -> void:
 			SignalBus.door_entered.emit()
 		elif level_to_unlock == 2:
 			await get_tree().create_timer(1.0).timeout
-			get_tree().paused = true
 			SignalBus.game_over.emit()
 		
 		
