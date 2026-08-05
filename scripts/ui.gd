@@ -50,4 +50,7 @@ func update_ui():
 		level_arrow.hide()
 func game_over_screen():
 	#game_over_text.text = "YOU'VE REACHED THE END.\n"str()+"\nWAS THAT\n[font_size=40][color=crimson][outline_size=12][outline_color=white]\" FUN \"[/outline_color][/outline_size][/color][/font_size]\n?????"
+	game_over.modulate.a = 0.0
+	var tween = create_tween()
+	tween.tween_property(self, "modulate:a", 1.0, 1.5) # Fades in over 1.5 seconds
 	game_over.show()
