@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 const SPEED = 150.0
 const JUMP_VELOCITY = -370.0
+const MIN_FALL_SPEED := 300.0 
 
 @onready var terrorMode = %terrorMode
 @onready var flashlight = $flashlight
@@ -17,6 +18,7 @@ const JUMP_VELOCITY = -370.0
 var unlocked = Global.unlocked
 var was_on_floor := false
 var landing := false
+var fall_speed := 0.0 
 
 
 func _ready() -> void:
@@ -57,6 +59,7 @@ func _physics_process(delta: float) -> void:
 
 	if not is_on_floor():
 		velocity += get_gravity() * delta
+		fall_speed = max(fall_speed, velocity.y)
 		if unlocked.get("animation") and not landing:
 			if velocity.y < 0:
 				animated_sprite.play("jump")
@@ -81,6 +84,7 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+	
 
 	if not was_on_floor and is_on_floor():
 		if unlocked.get("animation"):
@@ -89,7 +93,10 @@ func _physics_process(delta: float) -> void:
 		if unlocked.get("sfx"):
 			land.play()
 		#if unlocked.get("particles"):
-		fall_particles.emitting = true
+		if fall_speed >= MIN_FALL_SPEED:
+			fall_particles.restart()
+			fall_particles.emitting = true
+			fall_speed = 0.0
 
 	if is_on_floor() and not landing:
 		if direction:
