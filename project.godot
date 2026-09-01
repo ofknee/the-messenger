@@ -10,10 +10,10 @@ config_version=5
 
 [application]
 
-config/name="the-messenger"
+config/name="pay to play"
 run/main_scene="uid://5xj74i7g3fan"
 config/features=PackedStringArray("4.7", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="uid://dvt6p0w7dnb63"
 
 [audio]
 
