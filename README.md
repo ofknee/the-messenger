@@ -34,5 +34,7 @@ the wonderful godot<br>
 
 ## SOME PREMIUM PHOTOGRAPHY
 <img width="642" height="552" alt="Screenshot 2026-08-31 at 7 51 51 PM" src="https://github.com/user-attachments/assets/ee980c92-6ff0-4cff-ab11-173229a29375" />
-<img width="641" height="638" alt="Screenshot 2026-08-31 at 7 53 18 PM" src="https://github.com/user-attachments/assets/7f80a953-25b6-4577-9581-dcd91276f26d" />
+<img width="645" height="644" alt="Screenshot 2026-08-31 at 7 54 55 PM" src="https://github.com/user-attachments/assets/b6628512-7c94-4e44-bfc5-7e01c1ce04f2" />
 <img width="641" height="636" alt="Screenshot 2026-08-31 at 7 52 59 PM" src="https://github.com/user-attachments/assets/417cfb37-9f89-4a70-bdf9-306d4c77aede" />
+<img width="641" height="638" alt="Screenshot 2026-08-31 at 7 53 18 PM" src="https://github.com/user-attachments/assets/7f80a953-25b6-4577-9581-dcd91276f26d" />
+
